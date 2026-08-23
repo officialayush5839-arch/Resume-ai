@@ -75,7 +75,7 @@ export function Modal({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={closeOnBackdropClick ? onClose : undefined}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 bg-slate-900/60 dark:bg-black/80 backdrop-blur-md"
           />
 
           {/* Modal Card */}
@@ -84,21 +84,21 @@ export function Modal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ type: 'spring', stiffness: 350, damping: 28 }}
-            className={`relative z-10 w-full ${sizeClasses[size]} glass-card-elevated max-h-[90vh] flex flex-col my-auto border border-white/15 shadow-2xl shadow-black/80 ${className}`}
+            className={`relative z-10 w-full ${sizeClasses[size]} glass-card-elevated max-h-[90vh] flex flex-col my-auto border border-slate-200/80 dark:border-white/15 shadow-2xl shadow-slate-900/20 dark:shadow-black/80 ${className}`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
             {(title || showCloseButton) && (
-              <div className="flex items-start justify-between p-6 pb-4 border-b border-white/10 shrink-0">
+              <div className="flex items-start justify-between p-6 pb-4 border-b border-slate-200/80 dark:border-white/10 shrink-0">
                 <div className="space-y-1">
-                  {title && <h2 className="text-xl font-semibold text-slate-100 tracking-tight">{title}</h2>}
-                  {subtitle && <p className="text-sm text-slate-400">{subtitle}</p>}
+                  {title && <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 tracking-tight">{title}</h2>}
+                  {subtitle && <p className="text-sm text-slate-500 dark:text-slate-400">{subtitle}</p>}
                 </div>
                 {showCloseButton && (
                   <button
                     type="button"
                     onClick={onClose}
-                    className="p-1.5 text-slate-400 hover:text-slate-100 rounded-xl hover:bg-white/10 transition-colors focus:outline-none cursor-pointer"
+                    className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-100 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors focus:outline-none cursor-pointer"
                     aria-label="Close modal"
                   >
                     <X className="w-5 h-5" />
@@ -112,7 +112,7 @@ export function Modal({
 
             {/* Footer */}
             {footer && (
-              <div className="p-6 pt-4 border-t border-white/10 flex items-center justify-end gap-3 shrink-0 bg-slate-900/40 rounded-b-2xl">
+              <div className="p-6 pt-4 border-t border-slate-200/80 dark:border-white/10 flex items-center justify-end gap-3 shrink-0 bg-slate-50/80 dark:bg-slate-900/40 rounded-b-2xl">
                 {footer}
               </div>
             )}

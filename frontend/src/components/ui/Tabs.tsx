@@ -32,7 +32,7 @@ export function Tabs({
 
   return (
     <div
-      className={`inline-flex items-center p-1 bg-slate-900/80 border border-white/10 rounded-2xl backdrop-blur-xl gap-1 ${className}`}
+      className={`inline-flex items-center p-1 bg-slate-100/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-2xl backdrop-blur-xl gap-1 ${className}`}
       role="tablist"
     >
       {tabs.map((tab) => {
@@ -45,7 +45,7 @@ export function Tabs({
             aria-selected={isActive}
             onClick={() => onChange(tab.id)}
             className={`relative flex items-center justify-center font-medium rounded-xl transition-colors duration-200 select-none cursor-pointer focus:outline-none ${sizeClasses} ${
-              isActive ? 'text-white' : 'text-slate-400 hover:text-slate-200'
+              isActive ? 'text-white font-semibold' : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
             } ${tabClassName}`}
           >
             {isActive && (
@@ -61,7 +61,7 @@ export function Tabs({
               {tab.count !== undefined && (
                 <span
                   className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
-                    isActive ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-400'
+                    isActive ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-400'
                   }`}
                 >
                   {tab.count}

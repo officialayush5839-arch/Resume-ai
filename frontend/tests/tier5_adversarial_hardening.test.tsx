@@ -2,6 +2,7 @@ import React from 'react';
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from '../src/context/ThemeContext';
 
 // Types
 import type {
@@ -936,9 +937,11 @@ Stanford University Computer Science.`,
 
     it('T5.7.1: renders Dashboard page with KPI cards, quick CTAs, and layout elements', () => {
       const html = renderToString(
-        <MemoryRouter initialEntries={['/']}>
-          <Dashboard />
-        </MemoryRouter>
+        <ThemeProvider>
+          <MemoryRouter initialEntries={['/']}>
+            <Dashboard />
+          </MemoryRouter>
+        </ThemeProvider>
       );
 
       expect(html).toContain('Executive Dashboard');
@@ -954,9 +957,11 @@ Stanford University Computer Science.`,
 
     it('T5.7.2: renders Upload page with 4-stage pipeline stepper and drag-and-drop dropzone', () => {
       const html = renderToString(
-        <MemoryRouter initialEntries={['/upload']}>
-          <Upload />
-        </MemoryRouter>
+        <ThemeProvider>
+          <MemoryRouter initialEntries={['/upload']}>
+            <Upload />
+          </MemoryRouter>
+        </ThemeProvider>
       );
 
       expect(html).toContain('Neural Resume Ingestion Engine');
@@ -970,9 +975,11 @@ Stanford University Computer Science.`,
 
     it('T5.7.3: renders Candidates directory page with search input, category filters, and action CTAs', () => {
       const html = renderToString(
-        <MemoryRouter initialEntries={['/candidates']}>
-          <Candidates />
-        </MemoryRouter>
+        <ThemeProvider>
+          <MemoryRouter initialEntries={['/candidates']}>
+            <Candidates />
+          </MemoryRouter>
+        </ThemeProvider>
       );
 
       expect(html).toContain('Talent Intelligence');
@@ -989,11 +996,13 @@ Stanford University Computer Science.`,
 
     it('T5.7.4: renders CandidateProfile page with hero section, tabs, and action bar', () => {
       const html = renderToString(
-        <MemoryRouter initialEntries={['/candidates/1']}>
-          <Routes>
-            <Route path="/candidates/:id" element={<CandidateProfile />} />
-          </Routes>
-        </MemoryRouter>
+        <ThemeProvider>
+          <MemoryRouter initialEntries={['/candidates/1']}>
+            <Routes>
+              <Route path="/candidates/:id" element={<CandidateProfile />} />
+            </Routes>
+          </MemoryRouter>
+        </ThemeProvider>
       );
 
       expect(html).toBeDefined();
@@ -1002,9 +1011,11 @@ Stanford University Computer Science.`,
 
     it('T5.7.5: renders Jobs page with requisition cards, metrics, and Create Job action', () => {
       const html = renderToString(
-        <MemoryRouter initialEntries={['/jobs']}>
-          <Jobs />
-        </MemoryRouter>
+        <ThemeProvider>
+          <MemoryRouter initialEntries={['/jobs']}>
+            <Jobs />
+          </MemoryRouter>
+        </ThemeProvider>
       );
 
       expect(html).toContain('Talent Acquisition');
@@ -1017,11 +1028,13 @@ Stanford University Computer Science.`,
 
     it('T5.7.6: renders JobCandidates screening page with match score indicators', () => {
       const html = renderToString(
-        <MemoryRouter initialEntries={['/jobs/1/candidates']}>
-          <Routes>
-            <Route path="/jobs/:jobId/candidates" element={<JobCandidates />} />
-          </Routes>
-        </MemoryRouter>
+        <ThemeProvider>
+          <MemoryRouter initialEntries={['/jobs/1/candidates']}>
+            <Routes>
+              <Route path="/jobs/:jobId/candidates" element={<JobCandidates />} />
+            </Routes>
+          </MemoryRouter>
+        </ThemeProvider>
       );
 
       expect(html).toBeDefined();
@@ -1030,11 +1043,13 @@ Stanford University Computer Science.`,
 
     it('T5.7.7: renders LayoutShell with Sidebar, Topbar, and Ambient Glow mesh', () => {
       const html = renderToString(
-        <MemoryRouter initialEntries={['/']}>
-          <LayoutShell>
-            <div data-testid="main-content">Content Body</div>
-          </LayoutShell>
-        </MemoryRouter>
+        <ThemeProvider>
+          <MemoryRouter initialEntries={['/']}>
+            <LayoutShell>
+              <div data-testid="main-content">Content Body</div>
+            </LayoutShell>
+          </MemoryRouter>
+        </ThemeProvider>
       );
 
       expect(html).toContain('ResumeIQ');

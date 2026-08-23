@@ -38,6 +38,8 @@ import { Badge } from '../components/ui/Badge';
 import { Skeleton } from '../components/ui/Skeleton';
 import { CandidateService, JobService, DashboardService } from '../services/api';
 import { extractCandidateSkillNames } from '../utils/matching';
+import { useTheme } from '../context/ThemeContext';
+import { getChartTheme } from '../utils/chartTheme';
 import type { Candidate, Job, DashboardStats } from '../types';
 
 // Palette tokens for Recharts & UI
@@ -82,15 +84,15 @@ function Sparkline({ data, color = '#6366F1' }: { data: number[]; color?: string
 function CustomChartTooltip({ active, payload, label, unit = '' }: any) {
   if (active && payload && payload.length) {
     return (
-      <div className="glass-card-elevated px-3 py-2 text-xs shadow-xl border border-white/10 backdrop-blur-xl">
-        <p className="font-semibold text-slate-200 mb-1">{label || payload[0].name}</p>
+      <div className="glass-card-elevated px-3 py-2 text-xs shadow-xl border border-slate-200/80 dark:border-white/10 backdrop-blur-xl bg-white/95 dark:bg-slate-900/95">
+        <p className="font-semibold text-slate-800 dark:text-slate-200 mb-1">{label || payload[0].name}</p>
         <div className="flex items-center gap-2">
           <span
             className="w-2 h-2 rounded-full"
             style={{ backgroundColor: payload[0].color || payload[0].fill || '#6366F1' }}
           />
-          <span className="text-slate-400">{payload[0].name || 'Value'}:</span>
-          <span className="font-bold text-white">
+          <span className="text-slate-500 dark:text-slate-400">{payload[0].name || 'Value'}:</span>
+          <span className="font-bold text-slate-900 dark:text-white">
             {payload[0].value}
             {unit}
           </span>
@@ -102,6 +104,8 @@ function CustomChartTooltip({ active, payload, label, unit = '' }: any) {
 }
 
 export default function Dashboard() {
+  const { theme } = useTheme();
+  const chartTheme = getChartTheme(theme);
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -247,7 +251,7 @@ export default function Dashboard() {
       icon: Users,
       color: '#6366F1',
       sparkline: [12, 16, 14, 22, 28, 34, 42],
-      badgeBg: 'bg-indigo-500/10 text-indigo-300 border-indigo-500/20',
+      badgeBg: 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-500/10 dark:text-indigo-300 dark:border-indigo-500/20',
     },
     {
       id: 'jobs',
@@ -258,7 +262,7 @@ export default function Dashboard() {
       icon: Briefcase,
       color: '#06B6D4',
       sparkline: [2, 3, 4, 3, 5, 6, 8],
-      badgeBg: 'bg-cyan-500/10 text-cyan-300 border-cyan-500/20',
+      badgeBg: 'bg-cyan-50 text-cyan-700 border-cyan-200 dark:bg-cyan-500/10 dark:text-cyan-300 dark:border-cyan-500/20',
     },
     {
       id: 'match',
@@ -269,7 +273,7 @@ export default function Dashboard() {
       icon: TrendingUp,
       color: '#10B981',
       sparkline: [68, 72, 70, 75, 78, 81, avgMatchScore || 85],
-      badgeBg: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
+      badgeBg: 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/20',
     },
     {
       id: 'accuracy',
@@ -280,7 +284,7 @@ export default function Dashboard() {
       icon: Cpu,
       color: '#8B5CF6',
       sparkline: [98, 99, 99, 100, 100, 100, 100],
-      badgeBg: 'bg-purple-500/10 text-purple-300 border-purple-500/20',
+      badgeBg: 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-500/10 dark:text-purple-300 dark:border-purple-500/20',
     },
   ];
 
@@ -295,10 +299,10 @@ export default function Dashboard() {
       >
         <div className="space-y-1">
           <div className="flex items-center gap-3">
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
               Executive Dashboard
             </h1>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-500/10 dark:border-emerald-500/30 dark:text-emerald-400 text-xs font-medium backdrop-blur-md">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
@@ -306,7 +310,7 @@ export default function Dashboard() {
               <span>AI Engine: Online • 99.8%</span>
             </div>
           </div>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-slate-600 dark:text-slate-400">
             Real-time candidate telemetry, AI parsing analytics, and talent pipeline health.
           </p>
         </div>
@@ -360,7 +364,7 @@ export default function Dashboard() {
                 >
                   <Card
                     variant="interactive"
-                    className="p-5 sm:p-6 relative overflow-hidden group border border-white/10 hover:border-indigo-500/40 transition-all duration-300"
+                    className="p-5 sm:p-6 relative overflow-hidden group border border-slate-200/80 dark:border-white/10 hover:border-indigo-500/40 transition-all duration-300"
                   >
                     <div
                       className="absolute -top-12 -right-12 w-28 h-28 rounded-full blur-2xl opacity-20 pointer-events-none transition-opacity group-hover:opacity-40"
@@ -368,7 +372,7 @@ export default function Dashboard() {
                     />
 
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                         {card.title}
                       </span>
                       <div
@@ -384,7 +388,7 @@ export default function Dashboard() {
                     </div>
 
                     <div className="flex items-baseline justify-between gap-2 mb-3">
-                      <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+                      <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                         {card.value}
                       </div>
                       <div className="shrink-0 pt-1">
@@ -397,7 +401,7 @@ export default function Dashboard() {
                         <ArrowUpRight className="w-3 h-3 mr-0.5" aria-hidden="true" />
                         {card.change}
                       </span>
-                      <span className="text-slate-400">{card.trendText}</span>
+                      <span className="text-slate-500 dark:text-slate-400">{card.trendText}</span>
                     </div>
                   </Card>
                 </motion.div>
@@ -451,19 +455,19 @@ export default function Dashboard() {
                           <stop offset="100%" stopColor="#8B5CF6" />
                         </linearGradient>
                       </defs>
-                      <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="rgba(255,255,255,0.06)" />
+                      <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke={chartTheme.gridStroke} />
                       <XAxis
                         type="number"
-                        tick={{ fill: '#94A3B8', fontSize: 11 }}
-                        axisLine={{ stroke: 'rgba(255,255,255,0.1)' }}
+                        tick={{ fill: chartTheme.axisTickText, fontSize: 11 }}
+                        axisLine={{ stroke: chartTheme.axisStroke }}
                         tickLine={false}
                         allowDecimals={false}
                       />
                       <YAxis
                         type="category"
                         dataKey="name"
-                        tick={{ fill: '#CBD5E1', fontSize: 12, fontWeight: 500 }}
-                        axisLine={{ stroke: 'rgba(255,255,255,0.1)' }}
+                        tick={{ fill: chartTheme.categoryTickText, fontSize: 12, fontWeight: 500 }}
+                        axisLine={{ stroke: chartTheme.axisStroke }}
                         tickLine={false}
                         width={80}
                       />
@@ -493,7 +497,7 @@ export default function Dashboard() {
           <Card className="h-full flex flex-col p-6">
             <CardHeader className="mb-2">
               <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400">
                   <Activity className="w-4 h-4" aria-hidden="true" />
                 </div>
                 <div>
@@ -518,16 +522,16 @@ export default function Dashboard() {
                           <stop offset="100%" stopColor="#10B981" stopOpacity="0.0" />
                         </linearGradient>
                       </defs>
-                      <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
+                      <CartesianGrid strokeDasharray="3 3" stroke={chartTheme.gridStroke} />
                       <XAxis
                         dataKey="category"
-                        tick={{ fill: '#CBD5E1', fontSize: 12 }}
-                        axisLine={{ stroke: 'rgba(255,255,255,0.1)' }}
+                        tick={{ fill: chartTheme.categoryTickText, fontSize: 12 }}
+                        axisLine={{ stroke: chartTheme.axisStroke }}
                         tickLine={false}
                       />
                       <YAxis
-                        tick={{ fill: '#94A3B8', fontSize: 11 }}
-                        axisLine={{ stroke: 'rgba(255,255,255,0.1)' }}
+                        tick={{ fill: chartTheme.axisTickText, fontSize: 11 }}
+                        axisLine={{ stroke: chartTheme.axisStroke }}
                         tickLine={false}
                       />
                       <Tooltip content={<CustomChartTooltip unit=" candidates" />} />
@@ -559,7 +563,7 @@ export default function Dashboard() {
             <CardHeader className="mb-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
+                  <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400">
                     <Award className="w-4 h-4" aria-hidden="true" />
                   </div>
                   <div>
@@ -596,7 +600,7 @@ export default function Dashboard() {
                           <Cell
                             key={`cell-${index}`}
                             fill={entry.color}
-                            stroke="rgba(15, 23, 42, 0.8)"
+                            stroke={chartTheme.pieStroke}
                             strokeWidth={2}
                             className="transition-all duration-300 cursor-pointer"
                             style={{
@@ -613,10 +617,10 @@ export default function Dashboard() {
 
                   {/* Centered Donut Label */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                    <span className="text-2xl sm:text-3xl font-extrabold text-white">
+                    <span className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
                       {totalCandidatesCount}
                     </span>
-                    <span className="text-[11px] font-medium uppercase tracking-wider text-slate-400">
+                    <span className="text-[11px] font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">
                       Evaluated
                     </span>
                   </div>
@@ -633,8 +637,8 @@ export default function Dashboard() {
                         key={idx}
                         className={`p-3.5 rounded-xl border backdrop-blur-md transition-all duration-200 ${
                           activeIndex === idx
-                            ? 'bg-slate-800/90 border-white/25 shadow-lg'
-                            : 'bg-slate-800/40 border-white/5 hover:border-white/15'
+                            ? 'bg-white/90 dark:bg-slate-800/90 border-slate-300 dark:border-white/25 shadow-lg'
+                            : 'bg-slate-50 dark:bg-slate-800/40 border-slate-200/80 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/15'
                         }`}
                         onMouseEnter={() => setActiveIndex(idx)}
                         onMouseLeave={() => setActiveIndex(null)}
@@ -645,11 +649,11 @@ export default function Dashboard() {
                               className="w-2.5 h-2.5 rounded-full shrink-0"
                               style={{ backgroundColor: tier.color }}
                             />
-                            <span className="text-xs font-semibold text-slate-200">{tier.name}</span>
+                            <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">{tier.name}</span>
                           </div>
-                          <span className="text-xs font-bold text-white">{tier.value}</span>
+                          <span className="text-xs font-bold text-slate-900 dark:text-white">{tier.value}</span>
                         </div>
-                        <div className="w-full h-1.5 bg-slate-700/50 rounded-full overflow-hidden">
+                        <div className="w-full h-1.5 bg-slate-200 dark:bg-slate-700/50 rounded-full overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all duration-500"
                             style={{
@@ -658,9 +662,9 @@ export default function Dashboard() {
                             }}
                           />
                         </div>
-                        <div className="flex justify-between items-center mt-1.5 text-[11px] text-slate-400">
+                        <div className="flex justify-between items-center mt-1.5 text-[11px] text-slate-500 dark:text-slate-400">
                           <span>Confidence Tier</span>
-                          <span className="font-semibold text-slate-300">{pct}%</span>
+                          <span className="font-semibold text-slate-700 dark:text-slate-300">{pct}%</span>
                         </div>
                       </div>
                     );
@@ -685,7 +689,7 @@ export default function Dashboard() {
             <CardHeader className="mb-4">
               <div className="flex items-center justify-between w-full">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-indigo-400">
+                  <div className="p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-indigo-600 dark:text-indigo-400">
                     <Users className="w-4 h-4" aria-hidden="true" />
                   </div>
                   <div>
@@ -704,7 +708,7 @@ export default function Dashboard() {
             <CardContent className="flex-1 space-y-3">
               {loading ? (
                 Array.from({ length: 3 }).map((_, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl border border-white/5 bg-slate-800/30 flex items-center justify-between">
+                  <div key={idx} className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/5 bg-slate-100/50 dark:bg-slate-800/30 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <Skeleton variant="circular" className="w-10 h-10" />
                       <div className="space-y-1.5">
@@ -718,7 +722,7 @@ export default function Dashboard() {
               ) : recentCandidates.length === 0 ? (
                 <div className="py-12 text-center text-slate-500 text-sm">
                   <FileText className="w-8 h-8 mx-auto mb-2 opacity-40" />
-                  <p className="font-medium text-slate-400">No candidates found</p>
+                  <p className="font-medium text-slate-600 dark:text-slate-400">No candidates found</p>
                   <p className="text-xs text-slate-500 mt-1 mb-4">Upload your first resume to begin AI screening.</p>
                   <Link to="/upload">
                     <Button variant="outline" size="sm" leftIcon={<UploadCloud className="w-3.5 h-3.5" />}>
@@ -734,10 +738,10 @@ export default function Dashboard() {
                   return (
                     <div
                       key={candidate.id}
-                      className="p-3.5 rounded-xl border border-white/5 bg-slate-800/40 hover:bg-slate-800/80 hover:border-indigo-500/30 transition-all duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+                      className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/5 bg-slate-50/70 dark:bg-slate-800/40 hover:bg-slate-100 dark:hover:bg-slate-800/80 hover:border-indigo-500/30 transition-all duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
                     >
                       <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 text-indigo-300 font-bold flex items-center justify-center text-sm shrink-0">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 text-indigo-700 dark:text-indigo-300 font-bold flex items-center justify-center text-sm shrink-0">
                           {candidate.full_name
                             ? candidate.full_name
                                 .split(' ')
@@ -750,19 +754,19 @@ export default function Dashboard() {
                         <div className="min-w-0">
                           <Link
                             to={`/candidates/${candidate.id}`}
-                            className="font-semibold text-sm text-slate-100 hover:text-indigo-400 transition-colors truncate block"
+                            className="font-semibold text-sm text-slate-900 dark:text-slate-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors truncate block"
                           >
                             {candidate.full_name || 'Unnamed Candidate'}
                           </Link>
-                          <div className="flex items-center gap-2 text-xs text-slate-400 mt-0.5 flex-wrap">
+                          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mt-0.5 flex-wrap">
                             {candidate.location && (
                               <span className="flex items-center gap-1">
-                                <MapPin className="w-3 h-3 text-slate-500" aria-hidden="true" />
+                                <MapPin className="w-3 h-3 text-slate-400 dark:text-slate-500" aria-hidden="true" />
                                 {candidate.location}
                               </span>
                             )}
                             <span className="flex items-center gap-1">
-                              <Clock className="w-3 h-3 text-slate-500" aria-hidden="true" />
+                              <Clock className="w-3 h-3 text-slate-400 dark:text-slate-500" aria-hidden="true" />
                               {expYears > 0 ? `${expYears.toFixed(1)} yrs exp` : 'Entry level'}
                             </span>
                           </div>
@@ -802,7 +806,7 @@ export default function Dashboard() {
             <CardHeader className="mb-4">
               <div className="flex items-center justify-between w-full">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
+                  <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400">
                     <Briefcase className="w-4 h-4" aria-hidden="true" />
                   </div>
                   <div>
@@ -821,7 +825,7 @@ export default function Dashboard() {
             <CardContent className="flex-1 space-y-3">
               {loading ? (
                 Array.from({ length: 2 }).map((_, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl border border-white/5 bg-slate-800/30 space-y-2">
+                  <div key={idx} className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/5 bg-slate-100/50 dark:bg-slate-800/30 space-y-2">
                     <Skeleton className="h-4 w-40" />
                     <Skeleton className="h-3 w-28" />
                   </div>
@@ -829,7 +833,7 @@ export default function Dashboard() {
               ) : spotlightJobs.length === 0 ? (
                 <div className="py-12 text-center text-slate-500 text-sm">
                   <Briefcase className="w-8 h-8 mx-auto mb-2 opacity-40" />
-                  <p className="font-medium text-slate-400">No active jobs</p>
+                  <p className="font-medium text-slate-600 dark:text-slate-400">No active jobs</p>
                   <p className="text-xs text-slate-500 mt-1 mb-4">Post a new job requisition to match candidates.</p>
                   <Link to="/jobs">
                     <Button variant="outline" size="sm" leftIcon={<Plus className="w-3.5 h-3.5" />}>
@@ -841,17 +845,17 @@ export default function Dashboard() {
                 spotlightJobs.map((job) => (
                   <div
                     key={job.id}
-                    className="p-3.5 rounded-xl border border-white/5 bg-slate-800/40 hover:bg-slate-800/80 hover:border-cyan-500/30 transition-all duration-200 space-y-2.5"
+                    className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/5 bg-slate-50/70 dark:bg-slate-800/40 hover:bg-slate-100 dark:hover:bg-slate-800/80 hover:border-cyan-500/30 transition-all duration-200 space-y-2.5"
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <Link
                           to={`/jobs/${job.id}/candidates`}
-                          className="font-semibold text-sm text-slate-100 hover:text-cyan-400 transition-colors block"
+                          className="font-semibold text-sm text-slate-900 dark:text-slate-100 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors block"
                         >
                           {job.title}
                         </Link>
-                        <p className="text-xs text-slate-400 mt-0.5">
+                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                           {job.company} • {job.location || 'Remote'}
                         </p>
                       </div>

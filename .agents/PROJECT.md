@@ -25,10 +25,10 @@
 ## Milestones
 | # | Name | Scope | Dependencies | Status |
 |---|------|-------|-------------|--------|
-| 1 | M1: Theme Context & Global CSS | `ThemeContext.tsx`, `src/index.css`, `@custom-variant dark`, glassmorphism & mesh duality, `App.tsx` Provider wrapping | none | IN_PROGRESS |
-| 2 | M2: Layout Shell & UI Primitives | `LayoutShell.tsx`, `Sidebar.tsx`, `Topbar.tsx`, `MobileNav.tsx`, `AmbientGlow.tsx`, `src/components/ui/` primitives | M1 | PLANNED |
-| 3 | M3: Core Feature Pages & Charts | `Dashboard.tsx` + Recharts, `Candidates.tsx`, `Jobs.tsx`, `JobCandidates.tsx`, `Upload.tsx`, `CandidateComparisonModal.tsx`, `ResumePreviewDrawer.tsx` | M1, M2 | PLANNED |
-| 4 | M4: Candidate Profile & Toggle Integration | `CandidateProfile.tsx` header toggle button (Sun/Moon next to Refresh & Delete), profile tabs, RadarChart & score breakdowns | M1, M2 | PLANNED |
+| 1 | M1: Theme Context & Global CSS | `ThemeContext.tsx`, `src/index.css`, `@custom-variant dark`, glassmorphism & mesh duality, `App.tsx` Provider wrapping | none | DONE |
+| 2 | M2: Layout Shell & UI Primitives | `LayoutShell.tsx`, `Sidebar.tsx`, `Topbar.tsx`, `MobileNav.tsx`, `AmbientGlow.tsx`, `src/components/ui/` primitives | M1 | IN_PROGRESS |
+| 3 | M3: Core Feature Pages & Charts | `Dashboard.tsx` + Recharts, `Candidates.tsx`, `Jobs.tsx`, `JobCandidates.tsx`, `Upload.tsx`, `CandidateComparisonModal.tsx`, `ResumePreviewDrawer.tsx` | M1, M2 | IN_PROGRESS |
+| 4 | M4: Candidate Profile & Toggle Integration | `CandidateProfile.tsx` header toggle button (Sun/Moon next to Refresh & Delete), profile tabs, RadarChart & score breakdowns | M1, M2 | IN_PROGRESS |
 | 5 | M5: Verification, Testing & Forensic Audit | `npm run build`, `npm test`, Reviewers, Challengers, Forensic Auditor gate verification | M1, M2, M3, M4 | PLANNED |
 
 ## Interface Contracts

@@ -28,39 +28,39 @@ export function Badge({
 }: BadgeProps) {
   const variantStyles: Record<BadgeVariant, { container: string; dot: string; text: string }> = {
     indigo: {
-      container: 'bg-indigo-500/10 border-indigo-500/30 text-indigo-300 hover:border-indigo-400/50',
-      dot: 'bg-indigo-400',
-      text: 'text-indigo-300',
+      container: 'bg-indigo-50 border-indigo-200 text-indigo-700 hover:border-indigo-300 dark:bg-indigo-500/10 dark:border-indigo-500/30 dark:text-indigo-300 dark:hover:border-indigo-400/50',
+      dot: 'bg-indigo-600 dark:bg-indigo-400',
+      text: 'text-indigo-700 dark:text-indigo-300',
     },
     emerald: {
-      container: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300 hover:border-emerald-400/50',
-      dot: 'bg-emerald-400',
-      text: 'text-emerald-300',
+      container: 'bg-emerald-50 border-emerald-200 text-emerald-700 hover:border-emerald-300 dark:bg-emerald-500/10 dark:border-emerald-500/30 dark:text-emerald-300 dark:hover:border-emerald-400/50',
+      dot: 'bg-emerald-600 dark:bg-emerald-400',
+      text: 'text-emerald-700 dark:text-emerald-300',
     },
     amber: {
-      container: 'bg-amber-500/10 border-amber-500/30 text-amber-300 hover:border-amber-400/50',
-      dot: 'bg-amber-400',
-      text: 'text-amber-300',
+      container: 'bg-amber-50 border-amber-200 text-amber-800 hover:border-amber-300 dark:bg-amber-500/10 dark:border-amber-500/30 dark:text-amber-300 dark:hover:border-amber-400/50',
+      dot: 'bg-amber-600 dark:bg-amber-400',
+      text: 'text-amber-800 dark:text-amber-300',
     },
     rose: {
-      container: 'bg-rose-500/10 border-rose-500/30 text-rose-300 hover:border-rose-400/50',
-      dot: 'bg-rose-400',
-      text: 'text-rose-300',
+      container: 'bg-rose-50 border-rose-200 text-rose-700 hover:border-rose-300 dark:bg-rose-500/10 dark:border-rose-500/30 dark:text-rose-300 dark:hover:border-rose-400/50',
+      dot: 'bg-rose-600 dark:bg-rose-400',
+      text: 'text-rose-700 dark:text-rose-300',
     },
     cyan: {
-      container: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-300 hover:border-cyan-400/50',
-      dot: 'bg-cyan-400',
-      text: 'text-cyan-300',
+      container: 'bg-cyan-50 border-cyan-200 text-cyan-700 hover:border-cyan-300 dark:bg-cyan-500/10 dark:border-cyan-500/30 dark:text-cyan-300 dark:hover:border-cyan-400/50',
+      dot: 'bg-cyan-600 dark:bg-cyan-400',
+      text: 'text-cyan-700 dark:text-cyan-300',
     },
     purple: {
-      container: 'bg-purple-500/10 border-purple-500/30 text-purple-300 hover:border-purple-400/50',
-      dot: 'bg-purple-400',
-      text: 'text-purple-300',
+      container: 'bg-purple-50 border-purple-200 text-purple-700 hover:border-purple-300 dark:bg-purple-500/10 dark:border-purple-500/30 dark:text-purple-300 dark:hover:border-purple-400/50',
+      dot: 'bg-purple-600 dark:bg-purple-400',
+      text: 'text-purple-700 dark:text-purple-300',
     },
     slate: {
-      container: 'bg-slate-800/60 border-white/10 text-slate-300 hover:border-white/20',
-      dot: 'bg-slate-400',
-      text: 'text-slate-300',
+      container: 'bg-slate-100 border-slate-200 text-slate-700 hover:border-slate-300 dark:bg-slate-800/60 dark:border-white/10 dark:text-slate-300 dark:hover:border-white/20',
+      dot: 'bg-slate-500 dark:bg-slate-400',
+      text: 'text-slate-700 dark:text-slate-300',
     },
   };
 
@@ -98,7 +98,7 @@ export function Badge({
             e.stopPropagation();
             onRemove();
           }}
-          className="ml-0.5 -mr-0.5 p-0.5 rounded-full hover:bg-white/15 text-current transition-colors focus:outline-none cursor-pointer"
+          className="ml-0.5 -mr-0.5 p-0.5 rounded-full hover:bg-slate-200 dark:hover:bg-white/15 text-current transition-colors focus:outline-none cursor-pointer"
           aria-label="Remove"
         >
           <X className="w-3 h-3" />

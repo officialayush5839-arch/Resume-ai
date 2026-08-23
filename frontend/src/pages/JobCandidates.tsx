@@ -83,8 +83,8 @@ function RadialScoreGauge({ score, size = 110 }: { score: number; size?: number 
       </svg>
       {/* Center Score Label */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center select-none">
-        <span className="text-2xl font-black tracking-tight text-slate-100">{Math.round(score)}%</span>
-        <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Match</span>
+        <span className="text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">{Math.round(score)}%</span>
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Match</span>
       </div>
     </div>
   );
@@ -246,12 +246,12 @@ export default function JobCandidates() {
 
           <div className="h-4 w-px bg-white/10 hidden sm:block" />
 
-          <div className="flex items-center gap-2 text-xs text-slate-400">
-            <span className="hover:text-slate-200 cursor-pointer" onClick={() => navigate('/jobs')}>
+          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+            <span className="hover:text-slate-800 dark:text-slate-200 cursor-pointer" onClick={() => navigate('/jobs')}>
               Requisitions
             </span>
             <span>/</span>
-            <span className="text-slate-200 font-medium truncate max-w-[200px]">
+            <span className="text-slate-800 dark:text-slate-200 font-medium truncate max-w-[200px]">
               {job ? job.title : `Job #${jobId}`}
             </span>
             <span>/</span>
@@ -278,15 +278,15 @@ export default function JobCandidates() {
       {/* Loading Skeleton */}
       {loading && !job && (
         <div className="space-y-6">
-          <div className="glass-card p-6 h-48 animate-pulse bg-slate-800/40" />
+          <div className="glass-card p-6 h-48 animate-pulse bg-slate-50/70 dark:bg-slate-800/40" />
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="glass-card p-4 h-24 animate-pulse bg-slate-800/40" />
+              <div key={i} className="glass-card p-4 h-24 animate-pulse bg-slate-50/70 dark:bg-slate-800/40" />
             ))}
           </div>
           <div className="space-y-4">
             {Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="glass-card p-6 h-40 animate-pulse bg-slate-800/40" />
+              <div key={i} className="glass-card p-6 h-40 animate-pulse bg-slate-50/70 dark:bg-slate-800/40" />
             ))}
           </div>
         </div>
@@ -299,7 +299,7 @@ export default function JobCandidates() {
             <AlertCircle className="w-6 h-6" />
           </div>
           <div className="space-y-1">
-            <h3 className="text-lg font-bold text-slate-100">Unable to load candidate matches</h3>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Unable to load candidate matches</h3>
             <p className="text-sm text-rose-300 max-w-md mx-auto">{error}</p>
           </div>
           <div className="pt-2 flex justify-center gap-3">
@@ -339,25 +339,25 @@ export default function JobCandidates() {
                     </span>
                   </div>
 
-                  <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-100 tracking-tight">
+                  <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
                     {job.title}
                   </h1>
 
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
-                    <span className="flex items-center gap-1.5 font-medium text-slate-200">
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-slate-700 dark:text-slate-300">
+                    <span className="flex items-center gap-1.5 font-medium text-slate-800 dark:text-slate-200">
                       <Building2 className="w-4 h-4 text-indigo-400" />
                       {job.company}
                     </span>
-                    <span className="flex items-center gap-1.5 text-slate-400">
+                    <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
                       <MapPin className="w-4 h-4 text-slate-500" />
                       {job.location || 'Remote'}
                     </span>
-                    <span className="flex items-center gap-1.5 text-slate-400">
+                    <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
                       <Clock className="w-4 h-4 text-cyan-400" />
                       {job.minimum_experience_years ? `${job.minimum_experience_years}+ Years Minimum` : 'Any Experience'}
                     </span>
                     {job.education_requirement && (
-                      <span className="flex items-center gap-1.5 text-slate-400">
+                      <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
                         <GraduationCap className="w-4 h-4 text-purple-400" />
                         {job.education_requirement}
                       </span>
@@ -367,23 +367,23 @@ export default function JobCandidates() {
 
                 {/* Quick Requisition Stats Summary Cards */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 shrink-0">
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 text-center min-w-[100px]">
-                    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Candidates</span>
-                    <span className="text-xl font-bold text-slate-100 mt-0.5 block">{totalEvaluated}</span>
+                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-200/60 dark:border-white/5 text-center min-w-[100px]">
+                    <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Candidates</span>
+                    <span className="text-xl font-bold text-slate-900 dark:text-slate-100 mt-0.5 block">{totalEvaluated}</span>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 text-center min-w-[100px]">
-                    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Top Score</span>
+                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-200/60 dark:border-white/5 text-center min-w-[100px]">
+                    <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Top Score</span>
                     <span className="text-xl font-bold text-emerald-400 mt-0.5 block">{topMatchScore}%</span>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 text-center min-w-[100px]">
-                    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Qualified</span>
+                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-200/60 dark:border-white/5 text-center min-w-[100px]">
+                    <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Qualified</span>
                     <span className="text-xl font-bold text-indigo-400 mt-0.5 block">{qualifiedCount}</span>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 text-center min-w-[100px]">
-                    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Avg Match</span>
+                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-200/60 dark:border-white/5 text-center min-w-[100px]">
+                    <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Avg Match</span>
                     <span className="text-xl font-bold text-amber-400 mt-0.5 block">{avgMatchScore}%</span>
                   </div>
                 </div>
@@ -391,19 +391,19 @@ export default function JobCandidates() {
 
               {/* Job Description Excerpt */}
               {job.description && (
-                <div className="pt-4 border-t border-white/5">
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-4xl">
+                <div className="pt-4 border-t border-slate-200/60 dark:border-white/5">
+                  <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed max-w-4xl">
                     {job.description}
                   </p>
                 </div>
               )}
 
               {/* Required & Preferred Skills Requirements Display */}
-              <div className="pt-4 border-t border-white/5 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="pt-4 border-t border-slate-200/60 dark:border-white/5 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Required Skills */}
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
                       <Target className="w-3.5 h-3.5 text-indigo-400" />
                       Required Skills ({requiredSkills.length})
                     </span>
@@ -425,7 +425,7 @@ export default function JobCandidates() {
                 {/* Preferred Skills */}
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-purple-400" />
                       Preferred Skills ({preferredSkills.length})
                     </span>
@@ -452,7 +452,7 @@ export default function JobCandidates() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-1">
               {/* Search Bar */}
               <div className="relative flex-1">
-                <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+                <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 pointer-events-none">
                   <Search className="w-4 h-4" />
                 </div>
                 <input
@@ -460,17 +460,17 @@ export default function JobCandidates() {
                   placeholder="Filter ranked candidates by name or skill..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-slate-900/80 border border-white/10 rounded-xl pl-10 pr-4 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
+                  className="w-full bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl pl-10 pr-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
                 />
               </div>
 
               {/* Match Tier Filter */}
               <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-slate-400 whitespace-nowrap">Score Tier:</span>
+                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 whitespace-nowrap">Score Tier:</span>
                 <select
                   value={selectedTier}
                   onChange={(e) => setSelectedTier(e.target.value)}
-                  className="bg-slate-900/80 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
+                  className="bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl px-3 py-2 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
                 >
                   <option value="All">All Tiers ({rankedList.length})</option>
                   <option value="Strong Match">Strong Match (85%+)</option>
@@ -482,11 +482,11 @@ export default function JobCandidates() {
 
               {/* Sort By */}
               <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-slate-400 whitespace-nowrap">Sort:</span>
+                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 whitespace-nowrap">Sort:</span>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="bg-slate-900/80 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
+                  className="bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl px-3 py-2 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
                 >
                   <option value="score">Match Score (High-Low)</option>
                   <option value="experience">Experience (High-Low)</option>
@@ -503,10 +503,10 @@ export default function JobCandidates() {
                 <Users className="w-8 h-8" />
               </div>
               <div className="space-y-1 max-w-md">
-                <h3 className="text-lg font-semibold text-slate-100">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
                   {rankedList.length === 0 ? 'No Candidates Evaluated' : 'No candidates match filter criteria'}
                 </h3>
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   {rankedList.length === 0
                     ? 'Upload resumes to populate the candidate database and run automated screening.'
                     : 'Try resetting the score tier filter or clearing your search term.'}
@@ -570,12 +570,12 @@ export default function JobCandidates() {
                           ? 'border-slate-400/30'
                           : rank === 3
                           ? 'border-amber-700/30'
-                          : 'border-white/10'
+                          : 'border-slate-200/80 dark:border-white/10'
                       }`}
                     >
                       <div className="space-y-6">
                         {/* Top Header Row: Medal, Identity, Radial Gauge & Action */}
-                        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-white/5">
+                        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-200/60 dark:border-white/5">
                           {/* Left: Rank Medal & Candidate Avatar */}
                           <div className="flex items-start sm:items-center gap-4 flex-1">
                             {/* Rank Medal / Badge */}
@@ -586,8 +586,8 @@ export default function JobCandidates() {
                                   <span>#1 Gold Trophy</span>
                                 </div>
                               ) : rank === 2 ? (
-                                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-400/20 border border-slate-300/40 text-slate-200 font-bold text-xs shadow-[0_0_15px_rgba(226,232,240,0.15)]">
-                                  <Award className="w-4 h-4 text-slate-300 shrink-0" />
+                                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-400/20 border border-slate-300/40 text-slate-800 dark:text-slate-200 font-bold text-xs shadow-[0_0_15px_rgba(226,232,240,0.15)]">
+                                  <Award className="w-4 h-4 text-slate-700 dark:text-slate-300 shrink-0" />
                                   <span>#2 Silver Medal</span>
                                 </div>
                               ) : rank === 3 ? (
@@ -596,7 +596,7 @@ export default function JobCandidates() {
                                   <span>#3 Bronze Medal</span>
                                 </div>
                               ) : (
-                                <div className="w-9 h-9 rounded-xl bg-slate-800/90 border border-white/10 flex items-center justify-center font-bold text-xs text-slate-400">
+                                <div className="w-9 h-9 rounded-xl bg-slate-800/90 border border-slate-200/80 dark:border-white/10 flex items-center justify-center font-bold text-xs text-slate-500 dark:text-slate-400">
                                   #{rank}
                                 </div>
                               )}
@@ -605,7 +605,7 @@ export default function JobCandidates() {
                             {/* Candidate Avatar & Main Info */}
                             <div className="flex items-center gap-3.5 min-w-0 flex-1">
                               <div
-                                className={`w-13 h-13 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-md shrink-0 ${
+                                className={`w-13 h-13 rounded-2xl flex items-center justify-center text-slate-900 dark:text-white font-bold text-lg shadow-md shrink-0 ${
                                   rank === 1
                                     ? 'bg-gradient-to-br from-amber-500 to-yellow-600 border border-amber-300/40 text-slate-950 font-black'
                                     : 'bg-gradient-to-br from-indigo-500 to-purple-600 border border-white/15'
@@ -618,7 +618,7 @@ export default function JobCandidates() {
                                 <div className="flex items-center gap-2.5 flex-wrap">
                                   <Link
                                     to={`/candidates/${candidate.id}`}
-                                    className="text-lg font-bold text-slate-100 hover:text-indigo-300 transition-colors truncate"
+                                    className="text-lg font-bold text-slate-900 dark:text-slate-100 hover:text-indigo-300 transition-colors truncate"
                                   >
                                     {candidate.full_name}
                                   </Link>
@@ -630,8 +630,8 @@ export default function JobCandidates() {
                                   </Badge>
                                 </div>
 
-                                <div className="flex flex-wrap items-center gap-3 mt-1 text-xs text-slate-400">
-                                  <span className="flex items-center gap-1 text-slate-300 font-medium">
+                                <div className="flex flex-wrap items-center gap-3 mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                  <span className="flex items-center gap-1 text-slate-700 dark:text-slate-300 font-medium">
                                     <Clock className="w-3.5 h-3.5 text-indigo-400" />
                                     {expYears}
                                   </span>
@@ -652,7 +652,7 @@ export default function JobCandidates() {
                           </div>
 
                           {/* Right: Radial Score Gauge & Quick Profile Link */}
-                          <div className="flex items-center justify-between sm:justify-end gap-6 pt-4 lg:pt-0 border-t lg:border-t-0 border-white/5">
+                          <div className="flex items-center justify-between sm:justify-end gap-6 pt-4 lg:pt-0 border-t lg:border-t-0 border-slate-200/60 dark:border-white/5">
                             {/* Visual Animated Radial Gauge */}
                             <RadialScoreGauge score={score} size={96} />
 
@@ -671,7 +671,7 @@ export default function JobCandidates() {
                               <button
                                 type="button"
                                 onClick={() => setExpandedCandidateId(isExpanded ? null : candidate.id)}
-                                className="inline-flex items-center justify-center gap-1 text-xs text-slate-400 hover:text-slate-200 transition-colors py-1 cursor-pointer"
+                                className="inline-flex items-center justify-center gap-1 text-xs text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:text-slate-200 transition-colors py-1 cursor-pointer"
                               >
                                 {isExpanded ? (
                                   <>
@@ -692,7 +692,7 @@ export default function JobCandidates() {
                         {/* Multi-Factor Score Breakdown Progress Bars */}
                         <div className="space-y-3">
                           <div className="flex items-center justify-between">
-                            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                               Multi-Factor Scoring Matrix
                             </span>
                             <span className="text-[11px] text-slate-500">
@@ -702,12 +702,12 @@ export default function JobCandidates() {
 
                           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                             {/* 1. Skill Match */}
-                            <div className="p-3 rounded-xl bg-slate-900/60 border border-white/5 space-y-1.5">
+                            <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-200/60 dark:border-white/5 space-y-1.5">
                               <div className="flex items-center justify-between text-xs">
-                                <span className="text-slate-300 font-medium">Technical Skills</span>
+                                <span className="text-slate-700 dark:text-slate-300 font-medium">Technical Skills</span>
                                 <span className="font-bold text-indigo-400">{breakdown.skill_score}%</span>
                               </div>
-                              <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                              <div className="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
                                 <motion.div
                                   initial={{ width: 0 }}
                                   animate={{ width: `${breakdown.skill_score}%` }}
@@ -718,12 +718,12 @@ export default function JobCandidates() {
                             </div>
 
                             {/* 2. Experience Match */}
-                            <div className="p-3 rounded-xl bg-slate-900/60 border border-white/5 space-y-1.5">
+                            <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-200/60 dark:border-white/5 space-y-1.5">
                               <div className="flex items-center justify-between text-xs">
-                                <span className="text-slate-300 font-medium">Experience Fit</span>
+                                <span className="text-slate-700 dark:text-slate-300 font-medium">Experience Fit</span>
                                 <span className="font-bold text-cyan-400">{breakdown.experience_score}%</span>
                               </div>
-                              <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                              <div className="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
                                 <motion.div
                                   initial={{ width: 0 }}
                                   animate={{ width: `${breakdown.experience_score}%` }}
@@ -734,12 +734,12 @@ export default function JobCandidates() {
                             </div>
 
                             {/* 3. Keyword / NLP Density */}
-                            <div className="p-3 rounded-xl bg-slate-900/60 border border-white/5 space-y-1.5">
+                            <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-200/60 dark:border-white/5 space-y-1.5">
                               <div className="flex items-center justify-between text-xs">
-                                <span className="text-slate-300 font-medium">Keyword / NLP</span>
+                                <span className="text-slate-700 dark:text-slate-300 font-medium">Keyword / NLP</span>
                                 <span className="font-bold text-emerald-400">{breakdown.keyword_score}%</span>
                               </div>
-                              <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                              <div className="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
                                 <motion.div
                                   initial={{ width: 0 }}
                                   animate={{ width: `${breakdown.keyword_score}%` }}
@@ -750,12 +750,12 @@ export default function JobCandidates() {
                             </div>
 
                             {/* 4. Education Match */}
-                            <div className="p-3 rounded-xl bg-slate-900/60 border border-white/5 space-y-1.5">
+                            <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-200/60 dark:border-white/5 space-y-1.5">
                               <div className="flex items-center justify-between text-xs">
-                                <span className="text-slate-300 font-medium">Education Fit</span>
+                                <span className="text-slate-700 dark:text-slate-300 font-medium">Education Fit</span>
                                 <span className="font-bold text-purple-400">{breakdown.education_score}%</span>
                               </div>
-                              <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                              <div className="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
                                 <motion.div
                                   initial={{ width: 0 }}
                                   animate={{ width: `${breakdown.education_score}%` }}
@@ -823,10 +823,10 @@ export default function JobCandidates() {
                               animate={{ opacity: 1, height: 'auto' }}
                               exit={{ opacity: 0, height: 0 }}
                               transition={{ duration: 0.2 }}
-                              className="pt-4 border-t border-white/5 grid grid-cols-1 md:grid-cols-2 gap-4 overflow-hidden"
+                              className="pt-4 border-t border-slate-200/60 dark:border-white/5 grid grid-cols-1 md:grid-cols-2 gap-4 overflow-hidden"
                             >
                               {/* AI Identified Strengths */}
-                              <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5 space-y-2.5">
+                              <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200/60 dark:border-white/5 space-y-2.5">
                                 <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
                                   <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
                                   Key Candidate Strengths
@@ -836,7 +836,7 @@ export default function JobCandidates() {
                                 ) : (
                                   <ul className="space-y-1.5">
                                     {breakdown.strengths.map((str, i) => (
-                                      <li key={i} className="text-xs text-slate-300 flex items-start gap-2">
+                                      <li key={i} className="text-xs text-slate-700 dark:text-slate-300 flex items-start gap-2">
                                         <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
                                         <span>{str}</span>
                                       </li>
@@ -846,7 +846,7 @@ export default function JobCandidates() {
                               </div>
 
                               {/* AI Identified Weaknesses & Gaps */}
-                              <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5 space-y-2.5">
+                              <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200/60 dark:border-white/5 space-y-2.5">
                                 <span className="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
                                   <AlertCircle className="w-3.5 h-3.5 text-amber-400" />
                                   Screening Considerations & Gaps
@@ -859,7 +859,7 @@ export default function JobCandidates() {
                                 ) : (
                                   <ul className="space-y-1.5">
                                     {breakdown.weaknesses.map((weak, i) => (
-                                      <li key={i} className="text-xs text-slate-300 flex items-start gap-2">
+                                      <li key={i} className="text-xs text-slate-700 dark:text-slate-300 flex items-start gap-2">
                                         <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
                                         <span>{weak}</span>
                                       </li>

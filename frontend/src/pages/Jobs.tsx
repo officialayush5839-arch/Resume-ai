@@ -308,10 +308,10 @@ export default function Jobs() {
             </span>
             <span className="text-xs text-slate-500 font-medium">Requisition Hub</span>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-slate-100">
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Open Job <span className="gradient-brand-text">Requisitions</span>
           </h1>
-          <p className="text-slate-400 text-sm mt-1 max-w-2xl">
+          <p className="text-slate-500 dark:text-slate-400 text-sm mt-1 max-w-2xl">
             Create, manage, and screen talent pipelines against structured job criteria with real-time NLP candidate matching.
           </p>
         </div>
@@ -349,9 +349,9 @@ export default function Jobs() {
           <Card variant="glow" glowColor="indigo" className="relative overflow-hidden group">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Active Requisitions</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Active Requisitions</p>
                 <div className="flex items-baseline gap-2 mt-2">
-                  <span className="text-3xl font-bold text-slate-100">{activeRequisitionsCount}</span>
+                  <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">{activeRequisitionsCount}</span>
                   <span className="text-xs text-indigo-400 font-medium flex items-center gap-0.5">
                     <TrendingUp className="w-3.5 h-3.5" /> Live Positions
                   </span>
@@ -361,7 +361,7 @@ export default function Jobs() {
                 <Briefcase className="w-6 h-6" />
               </div>
             </div>
-            <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+            <div className="mt-4 pt-3 border-t border-slate-200/60 dark:border-white/5 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
               <span>Ready for AI Screening</span>
               <span className="text-indigo-300 font-medium">100% Pipeline Coverage</span>
             </div>
@@ -375,9 +375,9 @@ export default function Jobs() {
           <Card variant="glow" glowColor="emerald" className="relative overflow-hidden group">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Candidate Talent Pool</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Candidate Talent Pool</p>
                 <div className="flex items-baseline gap-2 mt-2">
-                  <span className="text-3xl font-bold text-slate-100">{candidatePoolSize}</span>
+                  <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">{candidatePoolSize}</span>
                   <span className="text-xs text-emerald-400 font-medium flex items-center gap-0.5">
                     <Sparkles className="w-3.5 h-3.5" /> Parsed Profiles
                   </span>
@@ -387,7 +387,7 @@ export default function Jobs() {
                 <Users className="w-6 h-6" />
               </div>
             </div>
-            <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+            <div className="mt-4 pt-3 border-t border-slate-200/60 dark:border-white/5 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
               <span>Available for Instant Match</span>
               <span className="text-emerald-300 font-medium">FastAPI Engine</span>
             </div>
@@ -401,9 +401,9 @@ export default function Jobs() {
           <Card variant="glow" glowColor="cyan" className="relative overflow-hidden group">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Avg Exp Requirement</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Avg Exp Requirement</p>
                 <div className="flex items-baseline gap-2 mt-2">
-                  <span className="text-3xl font-bold text-slate-100">{avgExpRequirement}</span>
+                  <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">{avgExpRequirement}</span>
                   <span className="text-xs text-cyan-400 font-medium flex items-center gap-0.5">
                     <Layers className="w-3.5 h-3.5" /> Seniority Baseline
                   </span>
@@ -413,7 +413,7 @@ export default function Jobs() {
                 <Clock className="w-6 h-6" />
               </div>
             </div>
-            <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+            <div className="mt-4 pt-3 border-t border-slate-200/60 dark:border-white/5 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
               <span>Weighted across requisitions</span>
               <span className="text-cyan-300 font-medium">Auto-Normalized</span>
             </div>
@@ -426,7 +426,7 @@ export default function Jobs() {
         <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3">
           {/* Search Input */}
           <div className="relative flex-1">
-            <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+            <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 pointer-events-none">
               <Search className="w-4 h-4" />
             </div>
             <input
@@ -434,13 +434,13 @@ export default function Jobs() {
               placeholder="Search by job title, company, skill, or location..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-900/80 border border-white/10 rounded-xl pl-10 pr-10 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30 backdrop-blur-md transition-all"
+              className="w-full bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl pl-10 pr-10 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30 backdrop-blur-md transition-all"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-slate-200 rounded-full hover:bg-white/10 transition-colors"
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:text-slate-200 rounded-full hover:bg-white/10 transition-colors"
                 aria-label="Clear search"
               >
                 <X className="w-3.5 h-3.5" />
@@ -451,14 +451,14 @@ export default function Jobs() {
           {/* Location Filter */}
           {uniqueLocations.length > 2 && (
             <div className="flex items-center gap-2">
-              <span className="text-xs font-semibold text-slate-400 whitespace-nowrap">Location:</span>
+              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 whitespace-nowrap">Location:</span>
               <select
                 value={selectedLocation}
                 onChange={(e) => setSelectedLocation(e.target.value)}
-                className="bg-slate-900/80 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
+                className="bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl px-3 py-2.5 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
               >
                 {uniqueLocations.map((loc) => (
-                  <option key={loc} value={loc} className="bg-slate-900 text-slate-200">
+                  <option key={loc} value={loc} className="bg-slate-900 text-slate-800 dark:text-slate-200">
                     {loc}
                   </option>
                 ))}
@@ -468,22 +468,22 @@ export default function Jobs() {
 
           {/* Min Experience Filter */}
           <div className="flex items-center gap-2">
-            <span className="text-xs font-semibold text-slate-400 whitespace-nowrap">Min Exp:</span>
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 whitespace-nowrap">Min Exp:</span>
             <select
               value={selectedExpFilter}
               onChange={(e) => setSelectedExpFilter(Number(e.target.value))}
-              className="bg-slate-900/80 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
+              className="bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl px-3 py-2.5 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
             >
-              <option value={0} className="bg-slate-900 text-slate-200">
+              <option value={0} className="bg-slate-900 text-slate-800 dark:text-slate-200">
                 All Experience
               </option>
-              <option value={1} className="bg-slate-900 text-slate-200">
+              <option value={1} className="bg-slate-900 text-slate-800 dark:text-slate-200">
                 1+ Years
               </option>
-              <option value={3} className="bg-slate-900 text-slate-200">
+              <option value={3} className="bg-slate-900 text-slate-800 dark:text-slate-200">
                 3+ Years
               </option>
-              <option value={5} className="bg-slate-900 text-slate-200">
+              <option value={5} className="bg-slate-900 text-slate-800 dark:text-slate-200">
                 5+ Years
               </option>
             </select>
@@ -492,7 +492,7 @@ export default function Jobs() {
 
         {/* Active Filter Chips */}
         {(searchQuery || selectedLocation !== 'All' || selectedExpFilter > 0) && (
-          <div className="flex items-center gap-2 pt-2 border-t border-white/5 text-xs text-slate-400 flex-wrap">
+          <div className="flex items-center gap-2 pt-2 border-t border-slate-200/60 dark:border-white/5 text-xs text-slate-500 dark:text-slate-400 flex-wrap">
             <span>Active filters:</span>
             {searchQuery && (
               <Badge variant="indigo" size="sm" onRemove={() => setSearchQuery('')}>
@@ -515,7 +515,7 @@ export default function Jobs() {
                 setSelectedLocation('All');
                 setSelectedExpFilter(0);
               }}
-              className="text-xs text-slate-400 hover:text-indigo-300 underline ml-auto cursor-pointer"
+              className="text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-300 underline ml-auto cursor-pointer"
             >
               Reset All
             </button>
@@ -549,10 +549,10 @@ export default function Jobs() {
             <Briefcase className="w-8 h-8" />
           </div>
           <div className="space-y-1 max-w-md">
-            <h3 className="text-lg font-semibold text-slate-100">
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
               {jobs.length === 0 ? 'No Job Requisitions Yet' : 'No matching requisitions found'}
             </h3>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-slate-500 dark:text-slate-400">
               {jobs.length === 0
                 ? 'Create your first job requisition to begin scoring and ranking candidates automatically.'
                 : 'Try adjusting your search query or removing active filters to see more requisitions.'}
@@ -623,10 +623,10 @@ export default function Jobs() {
                           {job.company ? job.company.charAt(0).toUpperCase() : <Building2 className="w-5 h-5" />}
                         </div>
                         <div className="min-w-0">
-                          <h3 className="text-base font-bold text-slate-100 group-hover:text-indigo-300 transition-colors line-clamp-1">
+                          <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-indigo-300 transition-colors line-clamp-1">
                             {job.title}
                           </h3>
-                          <p className="text-xs text-slate-400 flex items-center gap-1.5 mt-0.5 line-clamp-1">
+                          <p className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mt-0.5 line-clamp-1">
                             <Building2 className="w-3.5 h-3.5 text-slate-500 shrink-0" />
                             <span>{job.company}</span>
                           </p>
@@ -650,7 +650,7 @@ export default function Jobs() {
 
                     {/* Metadata Badges (Location, Exp, Education) */}
                     <div className="flex flex-wrap items-center gap-2">
-                      <Badge variant="slate" size="sm" icon={<MapPin className="w-3 h-3 text-slate-400" />}>
+                      <Badge variant="slate" size="sm" icon={<MapPin className="w-3 h-3 text-slate-500 dark:text-slate-400" />}>
                         {job.location || 'Remote'}
                       </Badge>
 
@@ -667,7 +667,7 @@ export default function Jobs() {
 
                     {/* Description Excerpt */}
                     {job.description && (
-                      <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
                         {job.description}
                       </p>
                     )}
@@ -676,7 +676,7 @@ export default function Jobs() {
                     {requiredSkillsList.length > 0 && (
                       <div className="space-y-1.5">
                         <div className="flex items-center justify-between">
-                          <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                          <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                             Required Skills ({requiredSkillsList.length})
                           </span>
                         </div>
@@ -720,10 +720,10 @@ export default function Jobs() {
                   </div>
 
                   {/* Card Footer & CTA */}
-                  <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-1.5 text-xs text-slate-400">
+                  <div className="mt-6 pt-4 border-t border-slate-200/60 dark:border-white/5 flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
                       <Users className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="font-medium text-slate-300">{candidatePoolSize}</span> Candidates
+                      <span className="font-medium text-slate-700 dark:text-slate-300">{candidatePoolSize}</span> Candidates
                     </div>
 
                     <Button
@@ -884,9 +884,9 @@ export default function Jobs() {
           />
 
           {/* Dynamic Required Skills Tag Input */}
-          <div className="space-y-2 pt-2 border-t border-white/10">
+          <div className="space-y-2 pt-2 border-t border-slate-200/80 dark:border-white/10">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-semibold uppercase tracking-wider text-slate-300">
+              <label className="text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
                 Required Technical Skills (45% Match Weight)
               </label>
               <span className="text-[11px] text-slate-500">Press Enter or comma to add tag</span>
@@ -906,7 +906,7 @@ export default function Jobs() {
                     }
                   }}
                   disabled={isSubmitting}
-                  className="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30 backdrop-blur-md"
+                  className="w-full bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30 backdrop-blur-md"
                 />
               </div>
               <Button
@@ -921,7 +921,7 @@ export default function Jobs() {
             </div>
 
             {/* Rendered Required Skill Badges */}
-            <div className="flex flex-wrap gap-2 min-h-[32px] p-2.5 rounded-xl bg-slate-900/50 border border-white/5 items-center">
+            <div className="flex flex-wrap gap-2 min-h-[32px] p-2.5 rounded-xl bg-slate-100/80 dark:bg-slate-900/50 border border-slate-200/60 dark:border-white/5 items-center">
               {formState.requiredSkills.length === 0 ? (
                 <span className="text-xs text-slate-500 italic">No required skills added yet</span>
               ) : (
@@ -940,9 +940,9 @@ export default function Jobs() {
           </div>
 
           {/* Dynamic Preferred Skills Tag Input */}
-          <div className="space-y-2 pt-2 border-t border-white/10">
+          <div className="space-y-2 pt-2 border-t border-slate-200/80 dark:border-white/10">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              <label className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Preferred / Nice-to-Have Skills
               </label>
               <span className="text-[11px] text-slate-500">Press Enter or comma to add tag</span>
@@ -962,7 +962,7 @@ export default function Jobs() {
                     }
                   }}
                   disabled={isSubmitting}
-                  className="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/30 backdrop-blur-md"
+                  className="w-full bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/30 backdrop-blur-md"
                 />
               </div>
               <Button
@@ -977,7 +977,7 @@ export default function Jobs() {
             </div>
 
             {/* Rendered Preferred Skill Badges */}
-            <div className="flex flex-wrap gap-2 min-h-[32px] p-2.5 rounded-xl bg-slate-900/50 border border-white/5 items-center">
+            <div className="flex flex-wrap gap-2 min-h-[32px] p-2.5 rounded-xl bg-slate-100/80 dark:bg-slate-900/50 border border-slate-200/60 dark:border-white/5 items-center">
               {formState.preferredSkills.length === 0 ? (
                 <span className="text-xs text-slate-500 italic">No preferred skills added yet</span>
               ) : (
@@ -1032,12 +1032,12 @@ export default function Jobs() {
             <AlertTriangle className="w-5 h-5" />
           </div>
           <div className="space-y-2">
-            <p className="text-sm text-slate-200">
+            <p className="text-sm text-slate-800 dark:text-slate-200">
               Are you sure you want to delete the requisition for{' '}
-              <strong className="text-slate-100 font-semibold">{deleteConfirmJob?.title}</strong> at{' '}
-              <strong className="text-slate-100 font-semibold">{deleteConfirmJob?.company}</strong>?
+              <strong className="text-slate-900 dark:text-slate-100 font-semibold">{deleteConfirmJob?.title}</strong> at{' '}
+              <strong className="text-slate-900 dark:text-slate-100 font-semibold">{deleteConfirmJob?.company}</strong>?
             </p>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               This will remove the job criteria and candidate screening rankings associated with this requisition.
             </p>
           </div>

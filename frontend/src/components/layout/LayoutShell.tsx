@@ -12,7 +12,7 @@ export function LayoutShell({ children }: LayoutShellProps) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   return (
-    <div className="flex h-screen bg-[#0A0E1A] text-slate-100 font-sans overflow-hidden relative selection:bg-indigo-500/30 selection:text-white">
+    <div className="flex h-screen bg-slate-50 dark:bg-[#0A0E1A] text-slate-900 dark:text-slate-100 font-sans overflow-hidden relative selection:bg-indigo-500/20 selection:text-indigo-950 dark:selection:bg-indigo-500/30 dark:selection:text-white">
       {/* Ambient Radial Glow mesh */}
       <AmbientGlow />
 

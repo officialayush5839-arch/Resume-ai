@@ -41,7 +41,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 bg-slate-900/60 dark:bg-black/80 backdrop-blur-md"
           />
 
           {/* Slide-in Drawer */}
@@ -50,26 +50,26 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-            className="relative z-10 w-4/5 max-w-xs h-full bg-slate-950/95 border-r border-white/10 backdrop-blur-2xl p-6 flex flex-col justify-between"
+            className="relative z-10 w-4/5 max-w-xs h-full bg-white/95 dark:bg-slate-950/95 border-r border-slate-200/80 dark:border-white/10 backdrop-blur-2xl p-6 flex flex-col justify-between"
           >
             {/* Header */}
             <div>
-              <div className="flex items-center justify-between pb-6 border-b border-white/10">
+              <div className="flex items-center justify-between pb-6 border-b border-slate-200/80 dark:border-white/10">
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 p-0.5 flex items-center justify-center shadow-lg shadow-indigo-500/25">
-                    <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-                      <Sparkles className="w-4 h-4 text-indigo-400" />
+                    <div className="w-full h-full bg-white dark:bg-slate-950 rounded-[10px] flex items-center justify-center">
+                      <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                     </div>
                   </div>
                   <div>
                     <span className="font-bold text-base gradient-brand-text">ResumeIQ</span>
-                    <p className="text-[10px] text-slate-400">AI Screening</p>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-400">AI Screening</p>
                   </div>
                 </div>
                 <button
                   type="button"
                   onClick={onClose}
-                  className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 transition-colors focus:outline-none"
+                  className="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition-colors focus:outline-none"
                   aria-label="Close navigation menu"
                 >
                   <X className="w-5 h-5" />
@@ -78,7 +78,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
               {/* Links */}
               <nav className="space-y-1.5 mt-6">
-                <div className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+                <div className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Navigation
                 </div>
                 {navItems.map((item) => {
@@ -94,16 +94,16 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                       to={item.path}
                       className={`flex items-center justify-between px-3.5 py-3 rounded-xl font-medium text-sm transition-all duration-200 ${
                         isActive
-                          ? 'bg-gradient-to-r from-indigo-600/30 to-purple-600/15 text-white border border-indigo-500/40 shadow-inner'
-                          : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
+                          ? 'bg-gradient-to-r from-indigo-500/15 to-purple-500/10 dark:from-indigo-600/30 dark:to-purple-600/15 text-indigo-600 dark:text-white border border-indigo-500/30 dark:border-indigo-500/40 shadow-inner'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-white/5'
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <Icon className={`w-4 h-4 ${isActive ? 'text-indigo-400' : 'text-slate-400'}`} />
+                        <Icon className={`w-4 h-4 ${isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-500 dark:text-slate-400'}`} />
                         <span>{item.label}</span>
                       </div>
                       {item.badge && (
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-500/20 dark:text-emerald-300 dark:border-emerald-500/30 flex items-center gap-1">
                           <Zap className="w-2.5 h-2.5" />
                           {item.badge}
                         </span>
@@ -115,12 +115,12 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             </div>
 
             {/* Bottom Status */}
-            <div className="glass-card p-3.5 bg-slate-900/60 border border-white/5 space-y-1.5">
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-300">
+            <div className="glass-card p-3.5 bg-slate-100/70 border border-slate-200/60 dark:bg-slate-900/60 dark:border-white/5 space-y-1.5">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300">
                 <PulseDot color="bg-emerald-400" />
                 <span>FastNLP Engine Ready</span>
               </div>
-              <p className="text-[10px] text-slate-400">
+              <p className="text-[10px] text-slate-500 dark:text-slate-400">
                 Resume parsing & candidate ranking active.
               </p>
             </div>

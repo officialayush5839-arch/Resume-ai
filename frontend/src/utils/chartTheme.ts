@@ -4,6 +4,10 @@ export interface ChartThemeConfig {
   gridStroke: string;
   axisColor: string;
   axisTickColor: string;
+  axisStroke: string;
+  axisTickText: string;
+  categoryTickText: string;
+  pieStroke: string;
   tooltipBg: string;
   tooltipBorder: string;
   tooltipText: string;
@@ -21,6 +25,10 @@ export const lightChartTheme: ChartThemeConfig = {
   gridStroke: 'rgba(226, 232, 240, 0.8)',
   axisColor: '#94A3B8',
   axisTickColor: '#64748B',
+  axisStroke: 'rgba(203, 213, 225, 0.6)',
+  axisTickText: '#64748B',
+  categoryTickText: '#334155',
+  pieStroke: 'rgba(248, 250, 252, 0.9)',
   tooltipBg: 'rgba(255, 255, 255, 0.95)',
   tooltipBorder: 'rgba(226, 232, 240, 0.9)',
   tooltipText: '#0F172A',
@@ -38,6 +46,10 @@ export const darkChartTheme: ChartThemeConfig = {
   gridStroke: 'rgba(255, 255, 255, 0.08)',
   axisColor: '#475569',
   axisTickColor: '#94A3B8',
+  axisStroke: 'rgba(255, 255, 255, 0.1)',
+  axisTickText: '#94A3B8',
+  categoryTickText: '#CBD5E1',
+  pieStroke: 'rgba(15, 23, 42, 0.8)',
   tooltipBg: 'rgba(15, 23, 42, 0.92)',
   tooltipBorder: 'rgba(255, 255, 255, 0.12)',
   tooltipText: '#F8FAFC',

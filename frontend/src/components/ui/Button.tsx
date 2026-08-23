@@ -32,19 +32,19 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseClasses =
-      'inline-flex items-center justify-center font-medium rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:ring-offset-2 focus:ring-offset-[#0A0E1A] disabled:opacity-50 disabled:cursor-not-allowed select-none cursor-pointer';
+      'inline-flex items-center justify-center font-medium rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#0A0E1A] disabled:opacity-50 disabled:cursor-not-allowed select-none cursor-pointer';
 
     const variantClasses: Record<ButtonVariant, string> = {
       primary:
         'bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white shadow-lg shadow-indigo-500/25 border border-indigo-400/30',
       secondary:
-        'bg-slate-800/80 hover:bg-slate-700/90 text-slate-100 border border-white/10 backdrop-blur-md hover:border-white/20',
+        'bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 hover:border-slate-300 dark:bg-slate-800/80 dark:hover:bg-slate-700/90 dark:text-slate-100 dark:border-white/10 dark:hover:border-white/20 backdrop-blur-md',
       outline:
-        'border border-indigo-500/40 text-indigo-300 hover:bg-indigo-500/10 hover:border-indigo-400 backdrop-blur-sm',
+        'border border-indigo-200 text-indigo-700 hover:bg-indigo-50 hover:border-indigo-300 dark:border-indigo-500/40 dark:text-indigo-300 dark:hover:bg-indigo-500/10 dark:hover:border-indigo-400 backdrop-blur-sm',
       ghost:
-        'text-slate-300 hover:bg-white/5 hover:text-white',
+        'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white',
       danger:
-        'bg-rose-500/20 text-rose-300 border border-rose-500/30 hover:bg-rose-500/30 hover:border-rose-500/50 shadow-lg shadow-rose-500/10',
+        'bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 hover:border-rose-300 dark:bg-rose-500/20 dark:text-rose-300 dark:border-rose-500/30 dark:hover:bg-rose-500/30 dark:hover:border-rose-500/50 shadow-lg shadow-rose-500/10',
       emerald:
         'bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-lg shadow-emerald-500/25 border border-emerald-400/30',
     };

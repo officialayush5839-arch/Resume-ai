@@ -36,9 +36,9 @@ describe('Milestone 1 Empirical Stress Test: UI Primitives & Layout Shell', () =
         if (variant === 'primary') expect(html).toContain('bg-gradient-to-r from-indigo-500');
         if (variant === 'emerald') expect(html).toContain('from-emerald-500');
         if (variant === 'danger') expect(html).toContain('bg-rose-500/20');
-        if (variant === 'outline') expect(html).toContain('border border-indigo-500/40');
+        if (variant === 'outline') expect(html).toContain('border-indigo-500/40');
         if (variant === 'secondary') expect(html).toContain('bg-slate-800/80');
-        if (variant === 'ghost') expect(html).toContain('text-slate-300 hover:bg-white/5');
+        if (variant === 'ghost') expect(html).toContain('hover:bg-white/5');
       });
     });
 
@@ -152,7 +152,7 @@ describe('Milestone 1 Empirical Stress Test: UI Primitives & Layout Shell', () =
       expect(html).toContain('Real-time matching score breakdown');
       expect(html).toContain('Body Content');
       expect(html).toContain('Status: Verified');
-      expect(html).toContain('border-t border-white/5');
+      expect(html).toContain('dark:border-white/5');
     });
 
     it('handles empty Card without breaking', () => {

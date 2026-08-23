@@ -18,7 +18,7 @@ export function Skeleton({
 
   return (
     <div
-      className={`bg-slate-800/60 border border-white/5 animate-shimmer relative overflow-hidden ${variantClasses} ${className}`}
+      className={`bg-slate-200/80 dark:bg-slate-800/60 border border-slate-200/60 dark:border-white/5 animate-shimmer relative overflow-hidden ${variantClasses} ${className}`}
       {...props}
     />
   );

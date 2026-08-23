@@ -51,11 +51,11 @@ export function CardHeader({ children, className = '' }: { children: React.React
 }
 
 export function CardTitle({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return <h3 className={`text-lg font-semibold text-slate-100 ${className}`}>{children}</h3>;
+  return <h3 className={`text-lg font-semibold text-slate-900 dark:text-slate-100 ${className}`}>{children}</h3>;
 }
 
 export function CardDescription({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return <p className={`text-xs text-slate-400 mt-0.5 ${className}`}>{children}</p>;
+  return <p className={`text-xs text-slate-500 dark:text-slate-400 mt-0.5 ${className}`}>{children}</p>;
 }
 
 export function CardContent({ children, className = '' }: { children: React.ReactNode; className?: string }) {
@@ -63,5 +63,5 @@ export function CardContent({ children, className = '' }: { children: React.Reac
 }
 
 export function CardFooter({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return <div className={`mt-4 pt-4 border-t border-white/5 flex items-center justify-between ${className}`}>{children}</div>;
+  return <div className={`mt-4 pt-4 border-t border-slate-200/80 dark:border-white/5 flex items-center justify-between ${className}`}>{children}</div>;
 }

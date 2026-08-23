@@ -284,10 +284,10 @@ export default function Candidates() {
             </span>
             <span className="text-xs text-slate-500 font-medium">Directory & Screening</span>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-slate-100">
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Candidate <span className="gradient-brand-text">Directory</span>
           </h1>
-          <p className="text-slate-400 text-sm mt-1 max-w-2xl">
+          <p className="text-slate-500 dark:text-slate-400 text-sm mt-1 max-w-2xl">
             Explore, filter, and compare candidate profiles parsed automatically from uploaded resumes with multi-dimensional scoring.
           </p>
         </div>
@@ -331,9 +331,9 @@ export default function Candidates() {
             <Card variant="glow" glowColor="indigo" className="relative overflow-hidden group">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Total Talent Pool</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Total Talent Pool</p>
                   <div className="flex items-baseline gap-2 mt-2">
-                    <span className="text-3xl font-bold text-slate-100">{candidates.length}</span>
+                    <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">{candidates.length}</span>
                     <span className="text-xs text-indigo-400 font-medium flex items-center gap-0.5">
                       <Users className="w-3.5 h-3.5" /> Profiles
                     </span>
@@ -343,7 +343,7 @@ export default function Candidates() {
                   <Users className="w-6 h-6" />
                 </div>
               </div>
-              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+              <div className="mt-4 pt-3 border-t border-slate-200/60 dark:border-white/5 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                 <span>Active in database</span>
                 <span className="text-indigo-300 font-medium">100% Vectorized</span>
               </div>
@@ -353,9 +353,9 @@ export default function Candidates() {
             <Card variant="glow" glowColor="emerald" className="relative overflow-hidden group">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Avg Experience</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Avg Experience</p>
                   <div className="flex items-baseline gap-2 mt-2">
-                    <span className="text-3xl font-bold text-slate-100">{avgExpYears}</span>
+                    <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">{avgExpYears}</span>
                     <span className="text-xs text-emerald-400 font-medium flex items-center gap-0.5">
                       <Clock className="w-3.5 h-3.5" /> Years
                     </span>
@@ -365,7 +365,7 @@ export default function Candidates() {
                   <Clock className="w-6 h-6" />
                 </div>
               </div>
-              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+              <div className="mt-4 pt-3 border-t border-slate-200/60 dark:border-white/5 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                 <span>Weighted tenure</span>
                 <span className="text-emerald-300 font-medium">Mid-to-Senior</span>
               </div>
@@ -375,9 +375,9 @@ export default function Candidates() {
             <Card variant="glow" glowColor="cyan" className="relative overflow-hidden group">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Unique Skills</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Unique Skills</p>
                   <div className="flex items-baseline gap-2 mt-2">
-                    <span className="text-3xl font-bold text-slate-100">{totalSkillsIdentified}</span>
+                    <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">{totalSkillsIdentified}</span>
                     <span className="text-xs text-cyan-400 font-medium flex items-center gap-0.5">
                       <Sparkles className="w-3.5 h-3.5" /> Tech Tags
                     </span>
@@ -387,7 +387,7 @@ export default function Candidates() {
                   <Sparkles className="w-6 h-6" />
                 </div>
               </div>
-              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+              <div className="mt-4 pt-3 border-t border-slate-200/60 dark:border-white/5 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                 <span>Across all domains</span>
                 <span className="text-cyan-300 font-medium">NLP Classified</span>
               </div>
@@ -397,9 +397,9 @@ export default function Candidates() {
             <Card variant="glow" glowColor="amber" className="relative overflow-hidden group">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Comparison Queue</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Comparison Queue</p>
                   <div className="flex items-baseline gap-2 mt-2">
-                    <span className="text-3xl font-bold text-slate-100">{selectedIds.length}</span>
+                    <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">{selectedIds.length}</span>
                     <span className="text-xs text-amber-400 font-medium flex items-center gap-0.5">
                       / 4 Selected
                     </span>
@@ -409,7 +409,7 @@ export default function Candidates() {
                   <Scale className="w-6 h-6" />
                 </div>
               </div>
-              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+              <div className="mt-4 pt-3 border-t border-slate-200/60 dark:border-white/5 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                 <span>{selectedIds.length >= 2 ? 'Ready for matrix' : 'Select 2-4 candidates'}</span>
                 {selectedIds.length >= 2 ? (
                   <button
@@ -428,12 +428,12 @@ export default function Candidates() {
       </div>
 
       {/* Multi-Facet Filter & Search Toolbar */}
-      <div className="glass-card p-5 space-y-5 border border-white/10 shadow-xl">
+      <div className="glass-card p-5 space-y-5 border border-slate-200/80 dark:border-white/10 shadow-xl">
         {/* Row 1: Search Input + View Toggle */}
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
           {/* Search Input */}
           <div className="relative flex-1">
-            <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+            <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 pointer-events-none">
               <Search className="w-4 h-4" />
             </div>
             <input
@@ -441,13 +441,13 @@ export default function Candidates() {
               placeholder="Search by candidate name, email, skills, summary, or location..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-900/80 border border-white/10 rounded-xl pl-10 pr-10 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30 backdrop-blur-md transition-all"
+              className="w-full bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl pl-10 pr-10 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30 backdrop-blur-md transition-all"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-slate-200 rounded-full hover:bg-white/10 transition-colors"
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:text-slate-200 rounded-full hover:bg-white/10 transition-colors"
                 aria-label="Clear search"
               >
                 <X className="w-3.5 h-3.5" />
@@ -457,14 +457,14 @@ export default function Candidates() {
 
           {/* View Mode Toggle */}
           <div className="flex items-center gap-2 self-end md:self-auto shrink-0">
-            <div className="flex items-center p-1 bg-slate-900/90 border border-white/10 rounded-xl">
+            <div className="flex items-center p-1 bg-slate-900/90 border border-slate-200/80 dark:border-white/10 rounded-xl">
               <button
                 type="button"
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer ${
                   viewMode === 'grid'
-                    ? 'bg-indigo-600 text-white shadow-md'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
+                    ? 'bg-indigo-600 text-slate-900 dark:text-white shadow-md'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:text-slate-200 hover:bg-white/5'
                 }`}
                 title="Glass Grid View"
                 aria-label="Grid View"
@@ -477,8 +477,8 @@ export default function Candidates() {
                 onClick={() => setViewMode('table')}
                 className={`p-2 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer ${
                   viewMode === 'table'
-                    ? 'bg-indigo-600 text-white shadow-md'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
+                    ? 'bg-indigo-600 text-slate-900 dark:text-white shadow-md'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:text-slate-200 hover:bg-white/5'
                 }`}
                 title="Dense Table View"
                 aria-label="Table View"
@@ -492,7 +492,7 @@ export default function Candidates() {
 
         {/* Row 2: Category Filter Pills */}
         <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
-          <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1">
+          <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1">
             <Layers className="w-3.5 h-3.5 text-indigo-400" /> Domain:
           </span>
           {CATEGORIES.map((cat) => {
@@ -505,7 +505,7 @@ export default function Candidates() {
                 className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap cursor-pointer select-none border ${
                   isActive
                     ? 'bg-indigo-500/20 border-indigo-400 text-indigo-300 shadow-md shadow-indigo-500/10'
-                    : 'bg-slate-900/60 border-white/5 text-slate-400 hover:text-slate-200 hover:border-white/20'
+                    : 'bg-slate-900/60 border-slate-200/60 dark:border-white/5 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:text-slate-200 hover:border-white/20'
                 }`}
               >
                 {cat}
@@ -515,11 +515,11 @@ export default function Candidates() {
         </div>
 
         {/* Row 3: Facet Dropdowns & Sliders */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2 border-t border-white/5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2 border-t border-slate-200/60 dark:border-white/5">
           {/* Min Experience Slider */}
           <div className="space-y-1.5">
             <div className="flex items-center justify-between text-xs">
-              <span className="font-semibold text-slate-400 flex items-center gap-1">
+              <span className="font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5 text-indigo-400" /> Min Experience:
               </span>
               <span className="font-bold text-indigo-300">
@@ -533,22 +533,22 @@ export default function Candidates() {
               step="1"
               value={minExpYears}
               onChange={(e) => setMinExpYears(Number(e.target.value))}
-              className="w-full accent-indigo-500 cursor-pointer h-1.5 bg-slate-800 rounded-lg appearance-none"
+              className="w-full accent-indigo-500 cursor-pointer h-1.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none"
             />
           </div>
 
           {/* Location Dropdown */}
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-slate-400 flex items-center gap-1">
+            <label className="block text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1">
               <MapPin className="w-3.5 h-3.5 text-cyan-400" /> Location:
             </label>
             <select
               value={selectedLocation}
               onChange={(e) => setSelectedLocation(e.target.value)}
-              className="w-full bg-slate-900/80 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
+              className="w-full bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl px-3 py-2 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
             >
               {uniqueLocations.map((loc) => (
-                <option key={loc} value={loc} className="bg-slate-900 text-slate-200">
+                <option key={loc} value={loc} className="bg-slate-900 text-slate-800 dark:text-slate-200">
                   {loc}
                 </option>
               ))}
@@ -557,27 +557,27 @@ export default function Candidates() {
 
           {/* Sort By Dropdown */}
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-slate-400 flex items-center gap-1">
+            <label className="block text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1">
               <SlidersHorizontal className="w-3.5 h-3.5 text-purple-400" /> Sort By:
             </label>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as SortOption)}
-              className="w-full bg-slate-900/80 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
+              className="w-full bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl px-3 py-2 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
             >
-              <option value="created_at_desc" className="bg-slate-900 text-slate-200">
+              <option value="created_at_desc" className="bg-slate-900 text-slate-800 dark:text-slate-200">
                 Date Added (Newest First)
               </option>
-              <option value="experience_desc" className="bg-slate-900 text-slate-200">
+              <option value="experience_desc" className="bg-slate-900 text-slate-800 dark:text-slate-200">
                 Experience (High to Low)
               </option>
-              <option value="experience_asc" className="bg-slate-900 text-slate-200">
+              <option value="experience_asc" className="bg-slate-900 text-slate-800 dark:text-slate-200">
                 Experience (Low to High)
               </option>
-              <option value="name_asc" className="bg-slate-900 text-slate-200">
+              <option value="name_asc" className="bg-slate-900 text-slate-800 dark:text-slate-200">
                 Candidate Name (A-Z)
               </option>
-              <option value="match_score_desc" className="bg-slate-900 text-slate-200">
+              <option value="match_score_desc" className="bg-slate-900 text-slate-800 dark:text-slate-200">
                 Match Score (Highest First)
               </option>
             </select>
@@ -585,19 +585,19 @@ export default function Candidates() {
 
           {/* Job Context Selector (for Score Sorting) */}
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-slate-400 flex items-center gap-1">
+            <label className="block text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1">
               <Briefcase className="w-3.5 h-3.5 text-emerald-400" /> Match Context:
             </label>
             <select
               value={selectedJobContextId}
               onChange={(e) => setSelectedJobContextId(e.target.value)}
-              className="w-full bg-slate-900/80 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
+              className="w-full bg-slate-100 dark:bg-slate-900/80 border border-slate-200/80 dark:border-white/10 rounded-xl px-3 py-2 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
             >
-              <option value="none" className="bg-slate-900 text-slate-200">
+              <option value="none" className="bg-slate-900 text-slate-800 dark:text-slate-200">
                 No Job (Raw Profile Score)
               </option>
               {jobs.map((job) => (
-                <option key={job.id} value={String(job.id)} className="bg-slate-900 text-slate-200">
+                <option key={job.id} value={String(job.id)} className="bg-slate-900 text-slate-800 dark:text-slate-200">
                   {job.title} ({job.company})
                 </option>
               ))}
@@ -607,12 +607,12 @@ export default function Candidates() {
 
         {/* Row 4: Popular Skill Filter Tags & Match Mode */}
         {popularSkills.length > 0 && (
-          <div className="pt-2 border-t border-white/5 space-y-2">
+          <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
                 <Tag className="w-3.5 h-3.5 text-indigo-400" /> Filter by Popular Tech:
               </span>
-              <div className="flex items-center gap-1.5 text-xs text-slate-400">
+              <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
                 <span>Match Mode:</span>
                 <button
                   type="button"
@@ -620,7 +620,7 @@ export default function Candidates() {
                   className={`px-2 py-0.5 rounded text-[11px] font-bold border transition-colors cursor-pointer ${
                     skillMatchMode === 'all'
                       ? 'bg-indigo-600/30 border-indigo-400 text-indigo-300'
-                      : 'bg-slate-800 border-white/10 text-slate-300'
+                      : 'bg-slate-200 dark:bg-slate-800 border-slate-200/80 dark:border-white/10 text-slate-700 dark:text-slate-300'
                   }`}
                   title="Toggle between Any (OR) and All (AND) match"
                 >
@@ -643,7 +643,7 @@ export default function Candidates() {
                     className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all select-none border cursor-pointer ${
                       isSelected
                         ? 'bg-indigo-500/20 border-indigo-400 text-indigo-200 shadow-sm'
-                        : 'bg-slate-900/50 border-white/5 text-slate-400 hover:text-slate-200 hover:border-white/15'
+                        : 'bg-slate-100/80 dark:bg-slate-900/50 border-slate-200/60 dark:border-white/5 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:text-slate-200 hover:border-white/15'
                     }`}
                   >
                     {skill}
@@ -656,8 +656,8 @@ export default function Candidates() {
 
         {/* Active Filters Row */}
         {hasActiveFilters && (
-          <div className="flex items-center gap-2 pt-2 border-t border-white/5 text-xs text-slate-400 flex-wrap">
-            <span className="font-semibold text-slate-300">Active filters:</span>
+          <div className="flex items-center gap-2 pt-2 border-t border-slate-200/60 dark:border-white/5 text-xs text-slate-500 dark:text-slate-400 flex-wrap">
+            <span className="font-semibold text-slate-700 dark:text-slate-300">Active filters:</span>
             {searchQuery && (
               <Badge variant="indigo" size="sm" onRemove={() => setSearchQuery('')}>
                 Search: "{searchQuery}"
@@ -718,10 +718,10 @@ export default function Candidates() {
       )}
 
       {/* Directory Results Counter */}
-      <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+      <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 px-1">
         <span>
-          Showing <strong className="text-slate-200">{filteredCandidates.length}</strong> of{' '}
-          <strong className="text-slate-200">{candidates.length}</strong> total candidates
+          Showing <strong className="text-slate-800 dark:text-slate-200">{filteredCandidates.length}</strong> of{' '}
+          <strong className="text-slate-800 dark:text-slate-200">{candidates.length}</strong> total candidates
         </span>
         {selectedIds.length > 0 && (
           <span className="text-amber-400 font-semibold flex items-center gap-1">
@@ -746,10 +746,10 @@ export default function Candidates() {
             <Users className="w-8 h-8" />
           </div>
           <div className="space-y-1 max-w-md">
-            <h3 className="text-lg font-semibold text-slate-100">
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
               {candidates.length === 0 ? 'No Candidates in Directory' : 'No matching candidates found'}
             </h3>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-slate-500 dark:text-slate-400">
               {candidates.length === 0
                 ? 'Upload your first resume file (PDF or DOCX) to parse structured candidate profiles.'
                 : 'Try broadening your search criteria or resetting filters to view more candidates.'}
@@ -831,7 +831,7 @@ export default function Candidates() {
                           <div
                             className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${
                               isSelected
-                                ? 'bg-indigo-600 border-indigo-500 text-white'
+                                ? 'bg-indigo-600 border-indigo-500 text-slate-900 dark:text-white'
                                 : 'bg-slate-800/80 border-white/20 text-transparent hover:border-indigo-400'
                             }`}
                           >
@@ -840,13 +840,13 @@ export default function Candidates() {
                         </div>
 
                         {/* Avatar */}
-                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-base shadow-lg shadow-indigo-500/20 shrink-0 group-hover:scale-105 transition-transform">
+                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-slate-900 dark:text-white font-bold text-base shadow-lg shadow-indigo-500/20 shrink-0 group-hover:scale-105 transition-transform">
                           {initials}
                         </div>
 
                         {/* Name & ID */}
                         <div className="min-w-0">
-                          <h3 className="text-base font-bold text-slate-100 group-hover:text-indigo-300 transition-colors line-clamp-1">
+                          <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-indigo-300 transition-colors line-clamp-1">
                             {candidate.full_name}
                           </h3>
                           <p className="text-xs text-slate-500 font-mono">
@@ -875,7 +875,7 @@ export default function Candidates() {
                       <Badge
                         variant="slate"
                         size="sm"
-                        icon={<MapPin className="w-3 h-3 text-slate-400" />}
+                        icon={<MapPin className="w-3 h-3 text-slate-500 dark:text-slate-400" />}
                       >
                         {candidate.location || 'Location Not Specified'}
                       </Badge>
@@ -893,7 +893,7 @@ export default function Candidates() {
 
                     {/* Summary Excerpt */}
                     {candidate.summary && (
-                      <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed italic">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed italic">
                         "{candidate.summary}"
                       </p>
                     )}
@@ -907,7 +907,7 @@ export default function Candidates() {
                             e.stopPropagation();
                             handleCopy(candidate.email!, `email-${candidate.id}`, 'Email');
                           }}
-                          className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/60 border border-white/5 text-slate-300 hover:text-indigo-300 hover:border-indigo-400/30 transition-colors cursor-pointer"
+                          className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/60 border border-slate-200/60 dark:border-white/5 text-slate-700 dark:text-slate-300 hover:text-indigo-300 hover:border-indigo-400/30 transition-colors cursor-pointer"
                           title="Click to copy email"
                         >
                           {copiedId === `email-${candidate.id}` ? (
@@ -926,7 +926,7 @@ export default function Candidates() {
                             e.stopPropagation();
                             handleCopy(candidate.phone!, `phone-${candidate.id}`, 'Phone');
                           }}
-                          className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/60 border border-white/5 text-slate-300 hover:text-indigo-300 hover:border-indigo-400/30 transition-colors cursor-pointer"
+                          className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/60 border border-slate-200/60 dark:border-white/5 text-slate-700 dark:text-slate-300 hover:text-indigo-300 hover:border-indigo-400/30 transition-colors cursor-pointer"
                           title="Click to copy phone"
                         >
                           {copiedId === `phone-${candidate.id}` ? (
@@ -943,7 +943,7 @@ export default function Candidates() {
                     {skillsList.length > 0 && (
                       <div className="space-y-1.5 pt-1">
                         <div className="flex items-center justify-between">
-                          <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                          <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                             Skills ({skillsList.length})
                           </span>
                         </div>
@@ -964,7 +964,7 @@ export default function Candidates() {
                   </div>
 
                   {/* Card Footer & Action Buttons */}
-                  <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between gap-2">
+                  <div className="mt-6 pt-4 border-t border-slate-200/60 dark:border-white/5 flex items-center justify-between gap-2">
                     <button
                       type="button"
                       onClick={(e) => {
@@ -972,10 +972,10 @@ export default function Candidates() {
                         setPreviewCandidate(candidate);
                         setPreviewActiveTab('summary');
                       }}
-                      className="px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-white/5 transition-colors flex items-center gap-1.5 cursor-pointer"
+                      className="px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:text-slate-100 hover:bg-white/5 transition-colors flex items-center gap-1.5 cursor-pointer"
                       title="Quick Resume Preview"
                     >
-                      <Eye className="w-3.5 h-3.5 text-slate-400" />
+                      <Eye className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
                       <span>Preview</span>
                     </button>
 
@@ -999,11 +999,11 @@ export default function Candidates() {
         </motion.div>
       ) : (
         /* Dense Data Table View */
-        <div className="glass-card overflow-hidden border border-white/10 shadow-2xl">
+        <div className="glass-card overflow-hidden border border-slate-200/80 dark:border-white/10 shadow-2xl">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-white/10 bg-slate-900/60 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                <tr className="border-b border-slate-200/80 dark:border-white/10 bg-slate-900/60 text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   <th className="p-4 w-12 text-center">
                     <span className="sr-only">Select</span>
                   </th>
@@ -1030,7 +1030,7 @@ export default function Candidates() {
                     <tr
                       key={candidate.id}
                       onClick={() => navigate(`/candidates/${candidate.id}`)}
-                      className={`hover:bg-slate-800/50 transition-colors cursor-pointer group ${
+                      className={`hover:bg-slate-100/60 dark:bg-slate-800/50 transition-colors cursor-pointer group ${
                         isSelected ? 'bg-indigo-950/20' : ''
                       }`}
                     >
@@ -1043,8 +1043,8 @@ export default function Candidates() {
                           <div
                             className={`w-4 h-4 rounded border flex items-center justify-center transition-all ${
                               isSelected
-                                ? 'bg-indigo-600 border-indigo-500 text-white'
-                                : 'bg-slate-800 border-white/20 text-transparent hover:border-indigo-400'
+                                ? 'bg-indigo-600 border-indigo-500 text-slate-900 dark:text-white'
+                                : 'bg-slate-200 dark:bg-slate-800 border-white/20 text-transparent hover:border-indigo-400'
                             }`}
                           >
                             <Check className="w-3 h-3 stroke-[3]" />
@@ -1055,11 +1055,11 @@ export default function Candidates() {
                       {/* Candidate Column */}
                       <td className="p-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs shadow-md shrink-0">
+                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-slate-900 dark:text-white font-bold text-xs shadow-md shrink-0">
                             {initials}
                           </div>
                           <div className="min-w-0">
-                            <div className="font-bold text-slate-100 group-hover:text-indigo-300 transition-colors">
+                            <div className="font-bold text-slate-900 dark:text-slate-100 group-hover:text-indigo-300 transition-colors">
                               {candidate.full_name}
                             </div>
                             <div className="text-xs text-slate-500 flex items-center gap-2">
@@ -1071,7 +1071,7 @@ export default function Candidates() {
                       </td>
 
                       {/* Location Column */}
-                      <td className="p-4 text-slate-400 text-xs">
+                      <td className="p-4 text-slate-500 dark:text-slate-400 text-xs">
                         <span className="flex items-center gap-1">
                           <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
                           {candidate.location || 'Remote / Unspecified'}
@@ -1112,7 +1112,7 @@ export default function Candidates() {
                               setPreviewCandidate(candidate);
                               setPreviewActiveTab('summary');
                             }}
-                            className="p-1.5 text-slate-400 hover:text-slate-100 hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
+                            className="p-1.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:text-slate-100 hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
                             title="Quick Preview"
                           >
                             <Eye className="w-4 h-4" />
@@ -1161,10 +1161,10 @@ export default function Candidates() {
                 <Scale className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm font-bold text-slate-100">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
                   {selectedIds.length} Candidate{selectedIds.length !== 1 ? 's' : ''} Selected
                 </p>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-500 dark:text-slate-400">
                   {selectedIds.length < 2
                     ? 'Select at least 1 more candidate to compare'
                     : 'Ready for side-by-side competency comparison'}
@@ -1177,7 +1177,7 @@ export default function Candidates() {
                 variant="ghost"
                 size="sm"
                 onClick={clearSelection}
-                className="text-xs text-slate-400 hover:text-slate-100"
+                className="text-xs text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:text-slate-100"
               >
                 Clear
               </Button>
@@ -1209,12 +1209,12 @@ export default function Candidates() {
           <div className="glass-card p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-slate-900/60">
             <div className="flex items-center gap-2">
               <Briefcase className="w-4 h-4 text-indigo-400 shrink-0" />
-              <span className="text-xs font-semibold text-slate-300">Screen against Job Requisition:</span>
+              <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Screen against Job Requisition:</span>
             </div>
             <select
               value={selectedJobContextId}
               onChange={(e) => setSelectedJobContextId(e.target.value)}
-              className="bg-slate-800 border border-white/10 rounded-xl px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-indigo-400"
+              className="bg-slate-200 dark:bg-slate-800 border border-slate-200/80 dark:border-white/10 rounded-xl px-3 py-1.5 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:border-indigo-400"
             >
               <option value="none">No Specific Job (Baseline Profile Match)</option>
               {jobs.map((j) => (
@@ -1252,23 +1252,23 @@ export default function Candidates() {
               const tier = getScoreTier(item.matchScore);
 
               return (
-                <div key={cand.id} className="glass-card p-5 space-y-4 border border-white/10 flex flex-col justify-between">
+                <div key={cand.id} className="glass-card p-5 space-y-4 border border-slate-200/80 dark:border-white/10 flex flex-col justify-between">
                   {/* Candidate Header */}
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs shadow-md">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-slate-900 dark:text-white font-bold text-xs shadow-md">
                         {initials}
                       </div>
                       <div className="min-w-0">
-                        <h4 className="font-bold text-slate-100 text-sm truncate">{cand.full_name}</h4>
-                        <p className="text-xs text-slate-400">{cand.location || 'Remote'}</p>
+                        <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm truncate">{cand.full_name}</h4>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">{cand.location || 'Remote'}</p>
                       </div>
                     </div>
 
                     {/* Match Score Gauge */}
                     <div className={`p-3 rounded-xl border ${tier.bg} ${tier.border} flex items-center justify-between`}>
                       <div>
-                        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Match Score</p>
+                        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Match Score</p>
                         <p className={`text-xl font-extrabold ${tier.textClass}`}>{item.matchScore}%</p>
                       </div>
                       <Badge variant={tier.badgeVariant} size="sm">
@@ -1278,15 +1278,15 @@ export default function Candidates() {
 
                     {/* Experience & Education */}
                     <div className="space-y-1 text-xs">
-                      <div className="flex justify-between py-1 border-b border-white/5">
-                        <span className="text-slate-400">Experience:</span>
-                        <span className="text-slate-200 font-medium">
+                      <div className="flex justify-between py-1 border-b border-slate-200/60 dark:border-white/5">
+                        <span className="text-slate-500 dark:text-slate-400">Experience:</span>
+                        <span className="text-slate-800 dark:text-slate-200 font-medium">
                           {cand.total_experience_months ? `${(cand.total_experience_months / 12).toFixed(1)} Yrs` : 'N/A'}
                         </span>
                       </div>
-                      <div className="flex justify-between py-1 border-b border-white/5">
-                        <span className="text-slate-400">Education:</span>
-                        <span className="text-slate-200 font-medium truncate max-w-[140px]">
+                      <div className="flex justify-between py-1 border-b border-slate-200/60 dark:border-white/5">
+                        <span className="text-slate-500 dark:text-slate-400">Education:</span>
+                        <span className="text-slate-800 dark:text-slate-200 font-medium truncate max-w-[140px]">
                           {cand.educations?.[0]?.degree || 'Unspecified'}
                         </span>
                       </div>
@@ -1294,7 +1294,7 @@ export default function Candidates() {
 
                     {/* Unique Skills (Differentiators) */}
                     <div className="space-y-1.5">
-                      <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                      <p className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                         Unique Differentiators ({item.uniqueSkills.length})
                       </p>
                       <div className="flex flex-wrap gap-1">
@@ -1342,7 +1342,7 @@ export default function Candidates() {
         {previewCandidate && (
           <div className="space-y-4">
             {/* Tabs */}
-            <div className="flex items-center gap-2 border-b border-white/10 pb-3">
+            <div className="flex items-center gap-2 border-b border-slate-200/80 dark:border-white/10 pb-3">
               {(['summary', 'experience', 'skills', 'education'] as const).map((tab) => (
                 <button
                   key={tab}
@@ -1350,8 +1350,8 @@ export default function Candidates() {
                   onClick={() => setPreviewActiveTab(tab)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                     previewActiveTab === tab
-                      ? 'bg-indigo-600 text-white shadow-md'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
+                      ? 'bg-indigo-600 text-slate-900 dark:text-white shadow-md'
+                      : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:text-slate-200 hover:bg-white/5'
                   }`}
                 >
                   {tab}
@@ -1362,26 +1362,26 @@ export default function Candidates() {
             {/* Tab Contents */}
             {previewActiveTab === 'summary' && (
               <div className="glass-card p-5 space-y-3">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Professional Summary</h4>
-                <p className="text-sm text-slate-200 leading-relaxed italic">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Professional Summary</h4>
+                <p className="text-sm text-slate-800 dark:text-slate-200 leading-relaxed italic">
                   {previewCandidate.summary || 'No summary text extracted from resume.'}
                 </p>
-                <div className="pt-3 border-t border-white/5 grid grid-cols-2 gap-4 text-xs">
+                <div className="pt-3 border-t border-slate-200/60 dark:border-white/5 grid grid-cols-2 gap-4 text-xs">
                   <div>
                     <span className="text-slate-500">Email: </span>
-                    <span className="text-slate-200">{previewCandidate.email || 'N/A'}</span>
+                    <span className="text-slate-800 dark:text-slate-200">{previewCandidate.email || 'N/A'}</span>
                   </div>
                   <div>
                     <span className="text-slate-500">Phone: </span>
-                    <span className="text-slate-200">{previewCandidate.phone || 'N/A'}</span>
+                    <span className="text-slate-800 dark:text-slate-200">{previewCandidate.phone || 'N/A'}</span>
                   </div>
                   <div>
                     <span className="text-slate-500">Location: </span>
-                    <span className="text-slate-200">{previewCandidate.location || 'N/A'}</span>
+                    <span className="text-slate-800 dark:text-slate-200">{previewCandidate.location || 'N/A'}</span>
                   </div>
                   <div>
                     <span className="text-slate-500">Total Experience: </span>
-                    <span className="text-slate-200">
+                    <span className="text-slate-800 dark:text-slate-200">
                       {previewCandidate.total_experience_months
                         ? `${(previewCandidate.total_experience_months / 12).toFixed(1)} years`
                         : 'N/A'}
@@ -1395,16 +1395,16 @@ export default function Candidates() {
               <div className="space-y-3">
                 {previewCandidate.experiences && previewCandidate.experiences.length > 0 ? (
                   previewCandidate.experiences.map((exp, idx) => (
-                    <div key={idx} className="glass-card p-4 space-y-1.5 border border-white/5">
+                    <div key={idx} className="glass-card p-4 space-y-1.5 border border-slate-200/60 dark:border-white/5">
                       <div className="flex items-center justify-between">
-                        <h4 className="font-bold text-slate-100 text-sm">{exp.job_title || 'Position'}</h4>
+                        <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm">{exp.job_title || 'Position'}</h4>
                         <Badge variant="indigo" size="sm">
                           {exp.start_date || 'N/A'} — {exp.end_date || 'Present'}
                         </Badge>
                       </div>
                       <p className="text-xs text-indigo-400 font-medium">{exp.company || 'Company'}</p>
                       {exp.description && (
-                        <p className="text-xs text-slate-300 leading-relaxed pt-1">{exp.description}</p>
+                        <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed pt-1">{exp.description}</p>
                       )}
                     </div>
                   ))
@@ -1416,7 +1416,7 @@ export default function Candidates() {
 
             {previewActiveTab === 'skills' && (
               <div className="glass-card p-5 space-y-4">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Extracted Skills ({previewCandidate.skills?.length || 0})
                 </h4>
                 <div className="flex flex-wrap gap-2">
@@ -1433,10 +1433,10 @@ export default function Candidates() {
               <div className="space-y-3">
                 {previewCandidate.educations && previewCandidate.educations.length > 0 ? (
                   previewCandidate.educations.map((edu, idx) => (
-                    <div key={idx} className="glass-card p-4 space-y-1 border border-white/5">
+                    <div key={idx} className="glass-card p-4 space-y-1 border border-slate-200/60 dark:border-white/5">
                       <div className="flex items-center justify-between">
-                        <h4 className="font-bold text-slate-100 text-sm">{edu.degree || 'Degree'}</h4>
-                        <span className="text-xs text-slate-400">
+                        <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm">{edu.degree || 'Degree'}</h4>
+                        <span className="text-xs text-slate-500 dark:text-slate-400">
                           {edu.start_date || ''} {edu.end_date ? `— ${edu.end_date}` : ''}
                         </span>
                       </div>
@@ -1486,9 +1486,9 @@ export default function Candidates() {
         }
       >
         <div className="space-y-3">
-          <p className="text-sm text-slate-300">
+          <p className="text-sm text-slate-700 dark:text-slate-300">
             Are you sure you want to delete the parsed profile for{' '}
-            <strong className="text-white font-bold">{deleteCandidateTarget?.full_name}</strong>?
+            <strong className="text-slate-900 dark:text-white font-bold">{deleteCandidateTarget?.full_name}</strong>?
           </p>
           <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-xs text-rose-300">
             All extracted experiences, educations, and skill vectors for Candidate #{deleteCandidateTarget?.id} will be immediately deleted.
